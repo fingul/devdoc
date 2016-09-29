@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nstack\n\n\n\n\n\n\nstudy\n\n\nudemy\n\n\n\n\n\n\nsingle page app\n\n\nangular2 / ionic2\n\n\n\n\n\n\ndjango\n\n\n\n\n\n\nforeground process manager\n\n\ncircus + config file + autoreload\n\n\n\n\n\n\nbackground process(taskqueue)\n\n\ncelery\n -> \nrq\n\n\n\n\ntodo : make \nrq task killer\n \n\n\n\n\n\n\n\n\ndjango plugin\n\n\nconda install jupyter\n\n\n\n\njupyter-notebook \n\n\n\n\n\n\nmommys_boy = faker + modelmommy\n\n\n\n\ndjango-inspect-model\n\n\n./manage.py shell_plus --print-sql\n\nIPYTHON_ARGUMENTS = [\n    '--ext', 'django_extensions.management.notebook_extension',\n    '--ext', 'myproject.notebook_extension',\n    '--debug',\n]\n\nSHELL_PLUS_PRE_IMPORTS = (\n    ('module.submodule1', ('class1', 'function2')),\n    ('module.submodule2', 'function3'),\n    ('module.submodule3', '*'),\n    'module.submodule4'\n)\n\n\n\nipython --ext=autoreload\n\n\nmkdocs serve -a :9000\n\n\n\n\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.",
+            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nstack\n\n\n\n\n\n\nstudy\n\n\nudemy\n\n\n\n\n\n\nsingle page app\n\n\nangular2 / ionic2\n\n\n\n\n\n\ndjango\n\n\n\n\n\n\nforeground process manager\n\n\ncircus + config file + autoreload\n\n\n\n\n\n\nbackground process(taskqueue)\n\n\ncelery\n -> \nrq\n\n\n\n\ntodo : make \nrq task killer\n \n\n\n\n\n\n\n\n\nwagtail\n\n\nhttps://github.com/torchbox/wagtail/wiki/Contributed-apps-and-website-code\n\n\n\uc774\uac74 \uac11\uc784. \ud648\ud53c \ub05d\ud310\uc655\n\n\nhttps://github.com/chrisdev/wagtail-cookiecutter-foundation\n\n\ndjango plugin\n\n\nconda install jupyter\n\n\n\n\njupyter-notebook \n\n\n\n\n\n\nmommys_boy = faker + modelmommy\n\n\n\n\ndjango-inspect-model\n\n\n./manage.py shell_plus --print-sql\n\nIPYTHON_ARGUMENTS = [\n    '--ext', 'django_extensions.management.notebook_extension',\n    '--ext', 'myproject.notebook_extension',\n    '--debug',\n]\n\nSHELL_PLUS_PRE_IMPORTS = (\n    ('module.submodule1', ('class1', 'function2')),\n    ('module.submodule2', 'function3'),\n    ('module.submodule3', '*'),\n    'module.submodule4'\n)\n\n\n\nipython --ext=autoreload\n\n\nmkdocs serve -a :9000\n\n\n\n\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.",
             "title": "Home"
         },
         {
@@ -14,6 +14,11 @@
             "location": "/#stack",
             "text": "study  udemy    single page app  angular2 / ionic2    django    foreground process manager  circus + config file + autoreload    background process(taskqueue)  celery  ->  rq   todo : make  rq task killer",
             "title": "stack"
+        },
+        {
+            "location": "/#wagtail",
+            "text": "https://github.com/torchbox/wagtail/wiki/Contributed-apps-and-website-code  \uc774\uac74 \uac11\uc784. \ud648\ud53c \ub05d\ud310\uc655  https://github.com/chrisdev/wagtail-cookiecutter-foundation",
+            "title": "wagtail"
         },
         {
             "location": "/#django-plugin",
