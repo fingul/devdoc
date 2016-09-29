@@ -24,15 +24,66 @@ For full documentation visit [mkdocs.org](http://mkdocs.org).
 
     - todo : make `rq task killer` 
 
+# bootstrap django
+
+    # cookiecutter 1.5 not released yet. (need for extra argument)
+    pip install -e git+https://github.com/audreyr/cookiecutter#egg=cookiecutter
+
+
+    cookiecutter --no-input https://github.com/pydanny/cookiecutter-django  project_name=za author_name=fingul email=0@0.com timezone=Asia/Seoul use_celery=n use_heroku=y
+    mkconda za
+    pip install -r requirements/local.txt
+    npm i
+    createdb za
+    python manage.py migrate
+    echo "User.objects.create_superuser('0', '0@0.com', '0')" | python manage.py shell_plus
+    pip install honcho
+
+    touch 0.$(date +"%Y%m%d_%H%M%S").txt
+
+    cat <<EOT >> greetings.txt
+    line 1
+    line 2
+    EOT
+
+
+
+ 9526  honcho start
+ 9527  nano Procfile
+ 9528  
+ 9529  honcho start
+
+
+
+
+> Procfile 
+web: python manage.py runserver
+worker: celery worker --app=za.taskapp --loglevel=info
+watch: gulp watch
+ 
+
+
+
+
+
+
+
+# wagtail
+
+<https://github.com/torchbox/wagtail/wiki/Contributed-apps-and-website-code>
+
+이건 갑임. 홈피 끝판왕
+
+<https://github.com/chrisdev/wagtail-cookiecutter-foundation>
+
 # django plugin
 
 conda install jupyter
 
 > jupyter-notebook 
 
-- faker + modelmommy
-mommys_boy
-django-inspect-model
+- mommys_boy = faker + modelmommy
+- django-inspect-model
 
 
 
