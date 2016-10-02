@@ -9,3 +9,7 @@
 # deploy
 
     mkdocs gh-deploy
+
+# all-in-one (commit + deploy)    
+
+    git add . && git commit -m . &&  git push -u origin master && mkdocs gh-deploy

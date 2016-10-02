@@ -4,6 +4,11 @@ For full documentation visit [mkdocs.org](http://mkdocs.org).
 
 # stack
 
+- search!!
+
+    <http://searchkit.co/>
+    <https://github.com/GregoryPotdevin/searchkit-daterangefilter>
+
 - study
 
     udemy
@@ -27,6 +32,7 @@ For full documentation visit [mkdocs.org](http://mkdocs.org).
 # bootstrap django
 
 <http://www.metaltoad.com/node/1109>
+
 <https://dezoito.github.io/2016/01/06/django-automate-browsersync.html>
 
 
