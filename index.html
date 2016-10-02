@@ -33,6 +33,14 @@
         <!-- Collapsed navigation -->
         <div class="navbar-header">
             
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
 
             <!-- Main title -->
             <a class="navbar-brand" href=".">My Docs</a>
@@ -41,6 +49,23 @@
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
             
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="active">
+                        <a href=".">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="deploy_this_doc/">Deploy this doc</a>
+                    </li>
+                
+                
+                </ul>
+            
 
             <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -48,6 +73,17 @@
                         <i class="fa fa-search"></i> Search
                     </a>
                 </li>
+                
+                    <li class="disabled">
+                        <a rel="next" >
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="deploy_this_doc/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
                 
                 
             </ul>
@@ -111,6 +147,8 @@
 </li>
 </ul>
 <h1 id="bootstrap-django">bootstrap django</h1>
+<p><a href="http://www.metaltoad.com/node/1109">http://www.metaltoad.com/node/1109</a>
+<a href="https://dezoito.github.io/2016/01/06/django-automate-browsersync.html">https://dezoito.github.io/2016/01/06/django-automate-browsersync.html</a></p>
 <pre><code># cookiecutter 1.5 not released yet. (need for extra argument)
 pip install -e git+https://github.com/audreyr/cookiecutter#egg=cookiecutter
 
@@ -232,5 +270,5 @@ docs/
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2016-09-29 03:28:24.609905
+Build Date UTC : 2016-10-02 10:01:37.931309
 -->
