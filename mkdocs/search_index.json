@@ -42,7 +42,7 @@
         },
         {
             "location": "/deploy_this_doc/",
-            "text": "edit\n\n\ncode . && mkdocs serve -a :10001\n\n\n\ncommit\n\n\ngit commit -m . &&  git push -u origin master\n\n\n\ndeploy\n\n\nmkdocs gh-deploy",
+            "text": "edit\n\n\ncode . && mkdocs serve -a :10001\n\n\n\ncommit\n\n\ngit add . && git commit -m . &&  git push -u origin master\n\n\n\ndeploy\n\n\nmkdocs gh-deploy",
             "title": "Deploy this doc"
         },
         {
@@ -52,7 +52,7 @@
         },
         {
             "location": "/deploy_this_doc/#commit",
-            "text": "git commit -m . &&  git push -u origin master",
+            "text": "git add . && git commit -m . &&  git push -u origin master",
             "title": "commit"
         },
         {
