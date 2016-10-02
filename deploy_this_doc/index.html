@@ -105,6 +105,9 @@
         <li class="main "><a href="#deploy">deploy</a></li>
         
     
+        <li class="main "><a href="#all-in-one-commit-deploy">all-in-one (commit + deploy)</a></li>
+        
+    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -117,6 +120,9 @@
 </code></pre>
 <h1 id="deploy">deploy</h1>
 <pre><code>mkdocs gh-deploy
+</code></pre>
+<h1 id="all-in-one-commit-deploy">all-in-one (commit + deploy)</h1>
+<pre><code>git add . &amp;&amp; git commit -m . &amp;&amp;  git push -u origin master &amp;&amp; mkdocs gh-deploy
 </code></pre></div>
             
         </div>
