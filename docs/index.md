@@ -26,6 +26,10 @@ For full documentation visit [mkdocs.org](http://mkdocs.org).
 
 # bootstrap django
 
+<http://www.metaltoad.com/node/1109>
+<https://dezoito.github.io/2016/01/06/django-automate-browsersync.html>
+
+
     # cookiecutter 1.5 not released yet. (need for extra argument)
     pip install -e git+https://github.com/audreyr/cookiecutter#egg=cookiecutter
 

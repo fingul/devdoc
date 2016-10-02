@@ -66,6 +66,9 @@
         <li class="main "><a href="#stack">stack</a></li>
         
     
+        <li class="main "><a href="#bootstrap-django">bootstrap django</a></li>
+        
+    
         <li class="main "><a href="#wagtail">wagtail</a></li>
         
     
@@ -107,6 +110,37 @@
 </ul>
 </li>
 </ul>
+<h1 id="bootstrap-django">bootstrap django</h1>
+<pre><code># cookiecutter 1.5 not released yet. (need for extra argument)
+pip install -e git+https://github.com/audreyr/cookiecutter#egg=cookiecutter
+
+
+cookiecutter --no-input https://github.com/pydanny/cookiecutter-django  project_name=za author_name=fingul email=0@0.com timezone=Asia/Seoul use_celery=n use_heroku=y
+mkconda za
+pip install -r requirements/local.txt
+npm i
+createdb za
+python manage.py migrate
+echo "User.objects.create_superuser('0', '0@0.com', '0')" | python manage.py shell_plus
+pip install honcho
+
+touch 0.$(date +"%Y%m%d_%H%M%S").txt
+
+cat &lt;&lt;EOT &gt;&gt; greetings.txt
+line 1
+line 2
+EOT
+</code></pre>
+<p>9526  honcho start
+ 9527  nano Procfile
+ 9528<br />
+ 9529  honcho start</p>
+<blockquote>
+<p>Procfile 
+web: python manage.py runserver
+worker: celery worker --app=za.taskapp --loglevel=info
+watch: gulp watch</p>
+</blockquote>
 <h1 id="wagtail">wagtail</h1>
 <p><a href="https://github.com/torchbox/wagtail/wiki/Contributed-apps-and-website-code">https://github.com/torchbox/wagtail/wiki/Contributed-apps-and-website-code</a></p>
 <p>이건 갑임. 홈피 끝판왕</p>
@@ -198,5 +232,5 @@ docs/
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2016-09-29 03:00:58.068162
+Build Date UTC : 2016-09-29 03:28:24.609905
 -->
