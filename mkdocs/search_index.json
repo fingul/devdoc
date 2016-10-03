@@ -64,6 +64,26 @@
             "location": "/deploy_this_doc/#all-in-one-commit-deploy",
             "text": "git add . && git commit -m . &&  git push -u origin master && mkdocs gh-deploy",
             "title": "all-in-one (commit + deploy)"
+        },
+        {
+            "location": "/media/",
+            "text": "media & ffmpeg\n\n\n[\uc2a4\ud2b8\ub9bc\uc815\ubcf4\ud655\uc778]\n- width * height\n- \ud504\ub808\uc784\ub808\uc774\ud2b8\n- \uceec\ub7ec\uc2a4\ud398\uc774\uc2a4,\n- \ucf54\ub371 (\ube44\ub514\uc624, \uc624\ub514\uc624)\n- \uc8fc\uc0ac \ubc29\uc2dd (interlace or progressive) --> \ud655\uc778\ud544\uc694\n\n\n\uad73\uc774 \uc774\uac78 \uc368\uc57c\ud558\uc9c4 \uc54a\uc744\uac70 \uac19\uc74c\n\n\nhttps://ffmpeg.org/ffmpeg-filters.html#toc-idet\n\n\n[\ubaa8\ub2c8\ud130\ub9c1 \ud56d\ubaa9]\n- \ube14\ub799\ud654\uba74 \uac10\uc9c0 -> OK\nhttps://ffmpeg.org/ffmpeg-filters.html#blackdetect\n\n\n\n\n\n\n\uc815\uc9c0\ud654\uba74 \uac10\uc9c0 -> OK\nhttps://home-assistant.io/components/binary_sensor.ffmpeg/#motion\n\n\n\n\n\n\n\ubb34\uc74c\uac10\uc9c0 -> OK\nhttps://ffmpeg.org/ffmpeg-filters.html#toc-silencedetect\n\n\n\n\n\n\n\uc74c\uc131 \ub178\uc774\uc988 \uac10\uc9c0 -> \ud655\uc778\ud544\uc694\n\n\n\n\n\n\n\uad8c\uc7a5 \uc218\uce58 \ub0b4 \ubcfc\ub968\ub808\ubca8 \ud655\uc778 -> \ud655\uc778\ud544\uc694\nhttps://ffmpeg.org/ffmpeg-filters.html#volumedetect\n\n\n\n\n\n\n\uc601\uc0c1,\uc74c\uc131 \uc2f1\ud06c\uac10\uc9c0 -> \ud655\uc778\ud544\uc694\n\n\n\n\n\uc601\uc0c1 \ubc84\ud37c\ub9c1 \uac10\uc9c0 (\ud328\ud0b7\ub4dc\ub78d \ud639\uc740 low bandwidth) -> \ud655\uc778\ud544\uc694\n\n\n\n\n\ub124\ud2b8\uc6cc\ud06c \ud14c\uc2a4\ud2b8\ub7a9\n\n\niperf\n\n\n\n\nspeed limit\nsudo yum install wondershaper\n\n\n\n\nfrom epel\n\n\nhttp://www.linuxserve.com/2015/05/how-to-throttlelimit-network-bandwidth.html\n\n\nwondershaper eth0 1024 512 \nwondershaper clear eth0 \n\n\nDEVICE=\"virbr0\"\nBOOTPROTO=\"static\"\nIPADDR=\"192.168.0.52\"\nNETMASK=\"255.255.255.0\"\nGATEWAY=\"192.168.0.1\"\nDNS1=8.8.8.8   \n\nONBOOT=\"yes\"\nTYPE=\"Bridge\"\nNM_CONTROLLED=\"no\"",
+            "title": "Media"
+        },
+        {
+            "location": "/media/#media-ffmpeg",
+            "text": "[\uc2a4\ud2b8\ub9bc\uc815\ubcf4\ud655\uc778]\n- width * height\n- \ud504\ub808\uc784\ub808\uc774\ud2b8\n- \uceec\ub7ec\uc2a4\ud398\uc774\uc2a4,\n- \ucf54\ub371 (\ube44\ub514\uc624, \uc624\ub514\uc624)\n- \uc8fc\uc0ac \ubc29\uc2dd (interlace or progressive) --> \ud655\uc778\ud544\uc694",
+            "title": "media &amp; ffmpeg"
+        },
+        {
+            "location": "/media/#_1",
+            "text": "https://ffmpeg.org/ffmpeg-filters.html#toc-idet  [\ubaa8\ub2c8\ud130\ub9c1 \ud56d\ubaa9]\n- \ube14\ub799\ud654\uba74 \uac10\uc9c0 -> OK\nhttps://ffmpeg.org/ffmpeg-filters.html#blackdetect    \uc815\uc9c0\ud654\uba74 \uac10\uc9c0 -> OK\nhttps://home-assistant.io/components/binary_sensor.ffmpeg/#motion    \ubb34\uc74c\uac10\uc9c0 -> OK\nhttps://ffmpeg.org/ffmpeg-filters.html#toc-silencedetect    \uc74c\uc131 \ub178\uc774\uc988 \uac10\uc9c0 -> \ud655\uc778\ud544\uc694    \uad8c\uc7a5 \uc218\uce58 \ub0b4 \ubcfc\ub968\ub808\ubca8 \ud655\uc778 -> \ud655\uc778\ud544\uc694\nhttps://ffmpeg.org/ffmpeg-filters.html#volumedetect    \uc601\uc0c1,\uc74c\uc131 \uc2f1\ud06c\uac10\uc9c0 -> \ud655\uc778\ud544\uc694   \uc601\uc0c1 \ubc84\ud37c\ub9c1 \uac10\uc9c0 (\ud328\ud0b7\ub4dc\ub78d \ud639\uc740 low bandwidth) -> \ud655\uc778\ud544\uc694   \ub124\ud2b8\uc6cc\ud06c \ud14c\uc2a4\ud2b8\ub7a9  iperf   speed limit\nsudo yum install wondershaper",
+            "title": "\uad73\uc774 \uc774\uac78 \uc368\uc57c\ud558\uc9c4 \uc54a\uc744\uac70 \uac19\uc74c"
+        },
+        {
+            "location": "/media/#from-epel",
+            "text": "http://www.linuxserve.com/2015/05/how-to-throttlelimit-network-bandwidth.html  wondershaper eth0 1024 512 \nwondershaper clear eth0   DEVICE=\"virbr0\"\nBOOTPROTO=\"static\"\nIPADDR=\"192.168.0.52\"\nNETMASK=\"255.255.255.0\"\nGATEWAY=\"192.168.0.1\"\nDNS1=8.8.8.8    \nONBOOT=\"yes\"\nTYPE=\"Bridge\"\nNM_CONTROLLED=\"no\"",
+            "title": "from epel"
         }
     ]
 }
