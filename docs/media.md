@@ -20,12 +20,14 @@ https://home-assistant.io/components/binary_sensor.ffmpeg/#motion
 - 무음감지 -> OK
 https://ffmpeg.org/ffmpeg-filters.html#toc-silencedetect
 
-- 음성 노이즈 감지 -> 확인필요
+
 
 - 권장 수치 내 볼륨레벨 확인 -> 확인필요
 https://ffmpeg.org/ffmpeg-filters.html#volumedetect
 
 - 영상,음성 싱크감지 -> 확인필요
+- 음성 노이즈 감지 -> 확인필요
+
 - 영상 버퍼링 감지 (패킷드랍 혹은 low bandwidth) -> 확인필요
 
 
