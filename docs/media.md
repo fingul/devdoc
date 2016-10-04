@@ -48,12 +48,36 @@ wondershaper clear eth0
 
 
 
-DEVICE="virbr0"
-BOOTPROTO="static"
-IPADDR="192.168.0.52"
-NETMASK="255.255.255.0"
-GATEWAY="192.168.0.1"
-DNS1=8.8.8.8     
-ONBOOT="yes"
-TYPE="Bridge"
-NM_CONTROLLED="no"
+
+ 1131* sudo nano /etc/sysconfig/network-scripts/ifcfg-br0
+ 1132* sudo service network restart
+ 1133* sudo wondershaper br-6c109e2ba805 10 10
+ 1134* chkconfig NetworkManager off
+ 1135* sudo chkconfig NetworkManager off
+ 1136* sudo service NetworkManager stop
+ 1137* sudo service NetworkManager status
+ 1138* sudo wondershaper br0 10 10
+ 1139* sudo service network restart
+ 1140* sudo wondershaper eno0 100 100
+ 1141* ifconfig
+ 1142* sudo wondershaper eno1 100 100
+ 1143* sudo wondershaper eno1 clear
+ 1144* sudo wondershaper br0 100 100
+ 1145  iperf -s
+ 1146* ip
+ 1147* sudo wondershaper clear
+ 1148* sudo wondershaper clear eno1
+ 1149* sudo wondershaper clear br0
+ 1150* sudo wondershaper br0 100 100
+ 1151* sudo wondershaper clear br0
+ 1152* ip
+ 1153* nmtui
+ 1154* sudo nmtui
+ 1155* chkconfig NetworkManager on
+ 1156* sudo chkconfig NetworkManager on
+ 1157* sudo service  NetworkManager start
+ 1158* sudo nmtui
+ 1159* ip
+ 1160* ifconfig
+ 1161* watch ifconfig
+
