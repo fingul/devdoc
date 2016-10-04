@@ -123,12 +123,44 @@
         <li class="main active"><a href="#network-simulator">network simulator</a></li>
         
     
+        <li class="main "><a href="#create-a-work-space">Create a work space.</a></li>
+        
+    
+        <li class="main "><a href="#download-miniconda">Download miniconda.</a></li>
+        
+    
+        <li class="main "><a href="#install-miniconda">Install miniconda.</a></li>
+        
+    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="network-simulator">network simulator</h1>
-<p>https://github.com/facebook/augmented-traffic-control</p></div>
+<p>https://github.com/facebook/augmented-traffic-control</p>
+<p>echo 'export PATH=/opt/conda/bin:$PATH' | sudo tee /etc/profile.d/conda.sh &amp;&amp; \
+    wget --quiet https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh &amp;&amp; \
+    /bin/bash ~/miniconda.sh -b -p /opt/conda &amp;&amp; \
+    rm ~/miniconda.sh</p>
+<h1 id="create-a-work-space">Create a work space.</h1>
+<h1 id="download-miniconda">Download miniconda.</h1>
+<p>echo "Started downloading miniconda"
+if [ "${OS_NAME}" = "darwin" ]; then
+    MINICONDA_INSTALL_URL="https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh"
+else
+    MINICONDA_INSTALL_URL="https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh"
+fi
+curl --location --silent "${MINICONDA_INSTALL_URL}" &gt; "/tmp/miniconda.sh"
+echo "Finished downloading miniconda"</p>
+<h1 id="install-miniconda">Install miniconda.</h1>
+<p>echo "Started installing Miniconda"</p>
+<p>rm -rf ~/conda/
+bash "/tmp/miniconda.sh" -b -p ~/conda
+echo "Finished installing Miniconda"</p>
+<p>export PATH=~/conda/bin:$PATH
+echo "export PATH=~/conda:$PATH" &gt;&gt; ~/.zshrc
+echo "export PATH=~/conda:$PATH" &gt;&gt; ~/.bashrc
+hash -r</p></div>
             
         </div>
 
