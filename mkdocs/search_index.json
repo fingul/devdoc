@@ -84,6 +84,26 @@
             "location": "/media/#from-epel",
             "text": "http://www.linuxserve.com/2015/05/how-to-throttlelimit-network-bandwidth.html  wondershaper eth0 1024 512 \nwondershaper clear eth0   DEVICE=\"virbr0\"\nBOOTPROTO=\"static\"\nIPADDR=\"192.168.0.52\"\nNETMASK=\"255.255.255.0\"\nGATEWAY=\"192.168.0.1\"\nDNS1=8.8.8.8    \nONBOOT=\"yes\"\nTYPE=\"Bridge\"\nNM_CONTROLLED=\"no\"",
             "title": "from epel"
+        },
+        {
+            "location": "/network_lab/",
+            "text": "1084  sudo nano /etc/sysconfig/network-scripts/ifcfg-br0\n\n\nDEVICE=br0\nTYPE=Bridge\nIPADDR=192.168.0.201\nPREFIX=24\nBOOTPROTO=none\nONBOOT=yes\nDELAY=0\n\n\n1085  h\n 1086  sudo systemctl restart network",
+            "title": "Network lab"
+        },
+        {
+            "location": "/system_monitoring/",
+            "text": "System monitoring\n\n\nnetdata\n\n\nhttps://github.com/firehol/netdata/wiki",
+            "title": "System monitoring"
+        },
+        {
+            "location": "/system_monitoring/#system-monitoring",
+            "text": "",
+            "title": "System monitoring"
+        },
+        {
+            "location": "/system_monitoring/#netdata",
+            "text": "https://github.com/firehol/netdata/wiki",
+            "title": "netdata"
         }
     ]
 }

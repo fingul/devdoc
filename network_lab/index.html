@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Media - My Docs</title>
+	<title>Network lab - My Docs</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
@@ -65,14 +65,14 @@
                 
                 
                 
-                    <li class="active">
-                        <a href="./">Media</a>
+                    <li >
+                        <a href="../media/">Media</a>
                     </li>
                 
                 
                 
-                    <li >
-                        <a href="../network_lab/">Network lab</a>
+                    <li class="active">
+                        <a href="./">Network lab</a>
                     </li>
                 
                 
@@ -93,12 +93,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../deploy_this_doc/">
+                        <a rel="next" href="../media/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../network_lab/">
+                        <a rel="prev" href="../system_monitoring/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -114,71 +114,20 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#media-ffmpeg">media &amp; ffmpeg</a></li>
-        
-    
-        <li class="main "><a href="#_1">굳이 이걸 써야하진 않을거 같음</a></li>
-        
-    
-        <li class="main "><a href="#from-epel">from epel</a></li>
-        
-    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="media-ffmpeg">media &amp; ffmpeg</h1>
-<p>[스트림정보확인]
-- width * height
-- 프레임레이트
-- 컬러스페이스,
-- 코덱 (비디오, 오디오)
-- 주사 방식 (interlace or progressive) --&gt; 확인필요</p>
-<h1 id="_1">굳이 이걸 써야하진 않을거 같음</h1>
-<p>https://ffmpeg.org/ffmpeg-filters.html#toc-idet</p>
-<p>[모니터링 항목]
-- 블랙화면 감지 -&gt; OK
-https://ffmpeg.org/ffmpeg-filters.html#blackdetect</p>
-<ul>
-<li>
-<p>정지화면 감지 -&gt; OK
-https://home-assistant.io/components/binary_sensor.ffmpeg/#motion</p>
-</li>
-<li>
-<p>무음감지 -&gt; OK
-https://ffmpeg.org/ffmpeg-filters.html#toc-silencedetect</p>
-</li>
-<li>
-<p>음성 노이즈 감지 -&gt; 확인필요</p>
-</li>
-<li>
-<p>권장 수치 내 볼륨레벨 확인 -&gt; 확인필요
-https://ffmpeg.org/ffmpeg-filters.html#volumedetect</p>
-</li>
-<li>
-<p>영상,음성 싱크감지 -&gt; 확인필요</p>
-</li>
-<li>영상 버퍼링 감지 (패킷드랍 혹은 low bandwidth) -&gt; 확인필요</li>
-</ul>
-<p>네트워크 테스트랩</p>
-<p>iperf</p>
-<ul>
-<li>speed limit
-sudo yum install wondershaper</li>
-</ul>
-<h1 id="from-epel">from epel</h1>
-<p>http://www.linuxserve.com/2015/05/how-to-throttlelimit-network-bandwidth.html</p>
-<p>wondershaper eth0 1024 512 
-wondershaper clear eth0 </p>
-<p>DEVICE="virbr0"
-BOOTPROTO="static"
-IPADDR="192.168.0.52"
-NETMASK="255.255.255.0"
-GATEWAY="192.168.0.1"
-DNS1=8.8.8.8   <br />
-ONBOOT="yes"
-TYPE="Bridge"
-NM_CONTROLLED="no"</p></div>
+<p>1084  sudo nano /etc/sysconfig/network-scripts/ifcfg-br0</p>
+<p>DEVICE=br0
+TYPE=Bridge
+IPADDR=192.168.0.201
+PREFIX=24
+BOOTPROTO=none
+ONBOOT=yes
+DELAY=0</p>
+<p>1085  h
+ 1086  sudo systemctl restart network</p></div>
             
         </div>
 
