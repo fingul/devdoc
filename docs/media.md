@@ -1,3 +1,10 @@
+
+# How to set up your own private RTMP server using nginx
+<https://obsproject.com/forum/resources/how-to-set-up-your-own-private-rtmp-server-using-nginx.50/>
+
+# rtmp 서비스 비교
+<http://lpokeh.blogspot.kr/2014/07/korean-only-daumpot-afreeca-rtmp.html>
+
 # media & ffmpeg
 
 [스트림정보확인]
