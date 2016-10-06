@@ -39,7 +39,7 @@ rtsp://192.168.0.51:1935/live/streamname
 
 
 HLS - @VLC
-http://192.168.0.51:1935/live/streamname/playlist.m3u8
+http://192.168.0.51:1935/live/xxx/playlist.m3u8
 
 
 ## adobe rtmp

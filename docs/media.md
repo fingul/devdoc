@@ -1,8 +1,32 @@
+# 정지화면 감지
+
+        import math
+        import glob
+        from PIL import Image
+        from functools import reduce
+
+        def image_diff(p1,p2):
+
+            h1 = Image.open(p1).histogram()
+            h2 = Image.open(p2).histogram()
+
+
+            diff_squares = [(h1[i] - h2[i]) ** 2 for i in range(len(h1))]
+            rms = math.sqrt(sum(diff_squares) / len(h1))
+
+            print("p1={}, p2={}, rms={}".format(p1,p2,rms))
+
+        
+        l = glob.glob('/tmp/1/*.png')
+
+        pairs = [  (l[n],l[n+1])  for n,i in enumerate(l) if n<len(l)-1]
+        [image_diff(p1,p2) for p1,p2 in pairs]    
+
 
 # 확인 사항
 - stack을 바꿔야합니다. dependency가 있습니다. rpm 추가 설치 필요
 - 워크로드 관련 하여 디덱트 주기 : 확인 - 대략 5초
-- i5 2 core
+- Intel(R) Core(TM) i5-4250U CPU @ 1.30GHz
 
 # How to set up your own private RTMP server using nginx
 <https://obsproject.com/forum/resources/how-to-set-up-your-own-private-rtmp-server-using-nginx.50/>
@@ -30,26 +54,6 @@ https://ffmpeg.org/ffmpeg-filters.html#blackdetect
 - 정지화면 감지 -> OK
 https://home-assistant.io/components/binary_sensor.ffmpeg/#motion
 
-        import math
-        from PIL import Image
-        from functools import reduce
-
-        def image_diff(p1,p2):
-
-            h1 = Image.open(p1).histogram()
-            h2 = Image.open(p2).histogram()
-
-
-            diff_squares = [(h1[i] - h2[i]) ** 2 for i in range(len(h1))]
-            rms = math.sqrt(sum(diff_squares) / len(h1))
-
-            print("p1={}, p2={}, rms={}".format(p1,p2,rms))
-
-        import glob
-        l = glob.glob('/tmp/1/*.png')
-
-        pairs = [  (l[n],l[n+1])  for n,i in enumerate(l) if n<len(l)-1]
-        [image_diff(p1,p2) for p1,p2 in pairs]    
 
 
 # 아래 두개는 vlc VU meter를 쓴다.

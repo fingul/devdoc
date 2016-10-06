@@ -1,3 +1,3 @@
 
 
-export VLC_PLUGIN_PATH=/usr/local/lib/vlc/plugins/
+export VLC_PLUGIN_PATH='/Applications/VLC.app/Contents/MacOS/plugins/'
