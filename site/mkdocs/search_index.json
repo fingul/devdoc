@@ -2,13 +2,13 @@
     "docs": [
         {
             "location": "/",
-            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nstack\n\n\n\n\n\n\nsearch!!\n\n\nhttp://searchkit.co/\n\n\nhttps://github.com/GregoryPotdevin/searchkit-daterangefilter\n\n\n\n\n\n\nstudy\n\n\nudemy\n\n\n\n\n\n\nsingle page app\n\n\nangular2 / ionic2\n\n\n\n\n\n\ndjango\n\n\n\n\n\n\nforeground process manager\n\n\ncircus + config file + autoreload\n\n\n\n\n\n\nbackground process(taskqueue)\n\n\ncelery\n -> \nrq\n\n\n\n\ntodo : make \nrq task killer\n \n\n\n\n\n\n\n\n\nbootstrap django\n\n\nhttp://www.metaltoad.com/node/1109\n\n\nhttps://dezoito.github.io/2016/01/06/django-automate-browsersync.html\n\n\n# cookiecutter 1.5 not released yet. (need for extra argument)\npip install -e git+https://github.com/audreyr/cookiecutter#egg=cookiecutter\n\n\ncookiecutter --no-input https://github.com/pydanny/cookiecutter-django  project_name=za author_name=fingul email=0@0.com timezone=Asia/Seoul use_celery=n use_heroku=y\nmkconda za\npip install -r requirements/local.txt\nnpm i\ncreatedb za\npython manage.py migrate\necho \"User.objects.create_superuser('0', '0@0.com', '0')\" | python manage.py shell_plus\npip install honcho\n\ntouch 0.$(date +\"%Y%m%d_%H%M%S\").txt\n\ncat <<EOT >> greetings.txt\nline 1\nline 2\nEOT\n\n\n\n9526  honcho start\n 9527  nano Procfile\n 9528\n\n 9529  honcho start\n\n\n\n\nProcfile \nweb: python manage.py runserver\nworker: celery worker --app=za.taskapp --loglevel=info\nwatch: gulp watch\n\n\n\n\nwagtail\n\n\nhttps://github.com/torchbox/wagtail/wiki/Contributed-apps-and-website-code\n\n\n\uc774\uac74 \uac11\uc784. \ud648\ud53c \ub05d\ud310\uc655\n\n\nhttps://github.com/chrisdev/wagtail-cookiecutter-foundation\n\n\ndjango plugin\n\n\nconda install jupyter\n\n\n\n\njupyter-notebook \n\n\n\n\n\n\nmommys_boy = faker + modelmommy\n\n\n\n\ndjango-inspect-model\n\n\n./manage.py shell_plus --print-sql\n\nIPYTHON_ARGUMENTS = [\n    '--ext', 'django_extensions.management.notebook_extension',\n    '--ext', 'myproject.notebook_extension',\n    '--debug',\n]\n\nSHELL_PLUS_PRE_IMPORTS = (\n    ('module.submodule1', ('class1', 'function2')),\n    ('module.submodule2', 'function3'),\n    ('module.submodule3', '*'),\n    'module.submodule4'\n)\n\n\n\nipython --ext=autoreload\n\n\nmkdocs serve -a :9000\n\n\n\n\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.",
+            "text": "\uac1c\ubc1c \uc815\ub9ac \ubb38\uc11c\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nstack\n\n\n\n\n\n\nsearch!!\n\n\nhttp://searchkit.co/\n\n\nhttps://github.com/GregoryPotdevin/searchkit-daterangefilter\n\n\n\n\n\n\nstudy\n\n\nudemy\n\n\n\n\n\n\nsingle page app\n\n\nangular2 / ionic2\n\n\n\n\n\n\ndjango\n\n\n\n\n\n\nforeground process manager\n\n\ncircus + config file + autoreload\n\n\n\n\n\n\nbackground process(taskqueue)\n\n\ncelery\n -> \nrq\n\n\n\n\ntodo : make \nrq task killer\n \n\n\n\n\n\n\n\n\nbootstrap django\n\n\nhttp://www.metaltoad.com/node/1109\n\n\nhttps://dezoito.github.io/2016/01/06/django-automate-browsersync.html\n\n\n# cookiecutter 1.5 not released yet. (need for extra argument)\npip install -e git+https://github.com/audreyr/cookiecutter#egg=cookiecutter\n\n\ncookiecutter --no-input https://github.com/pydanny/cookiecutter-django  project_name=za author_name=fingul email=0@0.com timezone=Asia/Seoul use_celery=n use_heroku=y\nmkconda za\npip install -r requirements/local.txt\nnpm i\ncreatedb za\npython manage.py migrate\necho \"User.objects.create_superuser('0', '0@0.com', '0')\" | python manage.py shell_plus\npip install honcho\n\ntouch 0.$(date +\"%Y%m%d_%H%M%S\").txt\n\ncat <<EOT >> greetings.txt\nline 1\nline 2\nEOT\n\n\n\n9526  honcho start\n 9527  nano Procfile\n 9528\n\n 9529  honcho start\n\n\n\n\nProcfile \nweb: python manage.py runserver\nworker: celery worker --app=za.taskapp --loglevel=info\nwatch: gulp watch\n\n\n\n\nwagtail\n\n\nhttps://github.com/torchbox/wagtail/wiki/Contributed-apps-and-website-code\n\n\n\uc774\uac74 \uac11\uc784. \ud648\ud53c \ub05d\ud310\uc655\n\n\nhttps://github.com/chrisdev/wagtail-cookiecutter-foundation\n\n\ndjango plugin\n\n\nconda install jupyter\n\n\n\n\njupyter-notebook \n\n\n\n\n\n\nmommys_boy = faker + modelmommy\n\n\n\n\ndjango-inspect-model\n\n\n./manage.py shell_plus --print-sql\n\nIPYTHON_ARGUMENTS = [\n    '--ext', 'django_extensions.management.notebook_extension',\n    '--ext', 'myproject.notebook_extension',\n    '--debug',\n]\n\nSHELL_PLUS_PRE_IMPORTS = (\n    ('module.submodule1', ('class1', 'function2')),\n    ('module.submodule2', 'function3'),\n    ('module.submodule3', '*'),\n    'module.submodule4'\n)\n\n\n\nipython --ext=autoreload\n\n\nmkdocs serve -a :9000\n\n\n\n\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.",
             "title": "Home"
         },
         {
-            "location": "/#welcome-to-mkdocs",
+            "location": "/#_1",
             "text": "For full documentation visit  mkdocs.org .",
-            "title": "Welcome to MkDocs"
+            "title": "\uac1c\ubc1c \uc815\ub9ac \ubb38\uc11c"
         },
         {
             "location": "/#stack",
@@ -66,9 +66,24 @@
             "title": "all-in-one (commit + deploy)"
         },
         {
+            "location": "/fusion_network/",
+            "text": "\ubaa9\ud45c\n\n\n\n\n\n\nts -> \uc7a5\ube44 \uc785\ub825 \ud655\uc778\n\n\nwinsend -> ts -> \uc7a5\ube44 \uc785\ub825 \ud655\uc778\n\n\n\n\n\uc7a5\ube44 1\ubc88 -> \uc9c1\uacb0 : 192.168.250.9 \n    jnlp \ubc1b\ub294\ub2e4. -> admin/admin\n\n\n\n\n\n\nwinsend \uc791\uc5c5\n\n\n\n\nwget -O /usr/local/lib/libebur128.so.1 \"https://github.com/fingul/sffmpeg/blob/master/lib/libebur128.so.1.1.0?raw=true\"\nwget -O /usr/local/bin/frmxtract \"https://github.com/fingul/sffmpeg/blob/master/bin/frmxtract?raw=true\"\nwget -O /usr/local/bin/ffmpeg \"https://github.com/fingul/sffmpeg/blob/master/bin/ffmpeg?raw=true\"\nwget -O /usr/local/bin/ffprobe \"https://github.com/fingul/sffmpeg/blob/master/bin/ffprobe?raw=true\"\nbash -c \"chmod +x /usr/local/bin/{ffmpeg,ffprobe,frmxtract}\"\nbash -c \"ldd /usr/local/bin/{ffmpeg,ffprobe,frmxtract}\"\n\n\nudp://@239.0.0.1:5000",
+            "title": "Fusion network"
+        },
+        {
             "location": "/media/",
-            "text": "media & ffmpeg\n\n\n[\uc2a4\ud2b8\ub9bc\uc815\ubcf4\ud655\uc778]\n- width * height\n- \ud504\ub808\uc784\ub808\uc774\ud2b8\n- \uceec\ub7ec\uc2a4\ud398\uc774\uc2a4,\n- \ucf54\ub371 (\ube44\ub514\uc624, \uc624\ub514\uc624)\n- \uc8fc\uc0ac \ubc29\uc2dd (interlace or progressive) --> \ud655\uc778\ud544\uc694\nhttps://gist.github.com/aktau/6660848\n\n\n\uad73\uc774 \uc774\uac78 \uc368\uc57c\ud558\uc9c4 \uc54a\uc744\uac70 \uac19\uc74c\n\n\nhttps://ffmpeg.org/ffmpeg-filters.html#toc-idet\n\n\n[\ubaa8\ub2c8\ud130\ub9c1 \ud56d\ubaa9]\n- \ube14\ub799\ud654\uba74 \uac10\uc9c0 -> OK\nhttps://ffmpeg.org/ffmpeg-filters.html#blackdetect\n\n\n\n\n\n\n\uc815\uc9c0\ud654\uba74 \uac10\uc9c0 -> OK\nhttps://home-assistant.io/components/binary_sensor.ffmpeg/#motion\n\n\n\n\n\n\n\ubb34\uc74c\uac10\uc9c0 -> OK\nhttps://ffmpeg.org/ffmpeg-filters.html#toc-silencedetect\n\n\n\n\n\n\n\uad8c\uc7a5 \uc218\uce58 \ub0b4 \ubcfc\ub968\ub808\ubca8 \ud655\uc778 -> \ud655\uc778\ud544\uc694\nhttps://ffmpeg.org/ffmpeg-filters.html#volumedetect\n\n\n\n\n\n\n\uc601\uc0c1 \ubc84\ud37c\ub9c1 \uac10\uc9c0 (\ud328\ud0b7\ub4dc\ub78d \ud639\uc740 low bandwidth) -> \ud655\uc778\ud544\uc694\n\n\n\n\n\uc601\uc0c1,\uc74c\uc131 \uc2f1\ud06c\uac10\uc9c0 -> \ud655\uc778\ud544\uc694\n\n\n\uc74c\uc131 \ub178\uc774\uc988 \uac10\uc9c0 -> \ud655\uc778\ud544\uc694\n==> \n\n\n\n\n\ub124\ud2b8\uc6cc\ud06c \ud14c\uc2a4\ud2b8\ub7a9\n\n\niperf\n\n\n\n\nspeed limit\nsudo yum install wondershaper\n\n\n\n\nfrom epel\n\n\nhttp://www.linuxserve.com/2015/05/how-to-throttlelimit-network-bandwidth.html\n\n\nwondershaper eth0 1024 512 \nwondershaper clear eth0 \n\n\n1131\n sudo nano /etc/sysconfig/network-scripts/ifcfg-br0\n 1132\n sudo service network restart\n 1133\n sudo wondershaper br-6c109e2ba805 10 10\n 1134\n chkconfig NetworkManager off\n 1135\n sudo chkconfig NetworkManager off\n 1136\n sudo service NetworkManager stop\n 1137\n sudo service NetworkManager status\n 1138\n sudo wondershaper br0 10 10\n 1139\n sudo service network restart\n 1140\n sudo wondershaper eno0 100 100\n 1141\n ifconfig\n 1142\n sudo wondershaper eno1 100 100\n 1143\n sudo wondershaper eno1 clear\n 1144\n sudo wondershaper br0 100 100\n 1145  iperf -s\n 1146\n ip\n 1147\n sudo wondershaper clear\n 1148\n sudo wondershaper clear eno1\n 1149\n sudo wondershaper clear br0\n 1150\n sudo wondershaper br0 100 100\n 1151\n sudo wondershaper clear br0\n 1152\n ip\n 1153\n nmtui\n 1154\n sudo nmtui\n 1155\n chkconfig NetworkManager on\n 1156\n sudo chkconfig NetworkManager on\n 1157\n sudo service  NetworkManager start\n 1158\n sudo nmtui\n 1159\n ip\n 1160\n ifconfig\n 1161\n watch ifconfig",
+            "text": "How to set up your own private RTMP server using nginx\n\n\nhttps://obsproject.com/forum/resources/how-to-set-up-your-own-private-rtmp-server-using-nginx.50/\n\n\nrtmp \uc11c\ube44\uc2a4 \ube44\uad50\n\n\nhttp://lpokeh.blogspot.kr/2014/07/korean-only-daumpot-afreeca-rtmp.html\n\n\nmedia & ffmpeg\n\n\n[\uc2a4\ud2b8\ub9bc\uc815\ubcf4\ud655\uc778]\n- width * height\n- \ud504\ub808\uc784\ub808\uc774\ud2b8\n- \uceec\ub7ec\uc2a4\ud398\uc774\uc2a4,\n- \ucf54\ub371 (\ube44\ub514\uc624, \uc624\ub514\uc624)\n- \uc8fc\uc0ac \ubc29\uc2dd (interlace or progressive) --> \ud655\uc778\ud544\uc694\nhttps://gist.github.com/aktau/6660848\n\n\n\uad73\uc774 \uc774\uac78 \uc368\uc57c\ud558\uc9c4 \uc54a\uc744\uac70 \uac19\uc74c\n\n\nhttps://ffmpeg.org/ffmpeg-filters.html#toc-idet\n\n\n[\ubaa8\ub2c8\ud130\ub9c1 \ud56d\ubaa9]\n- \ube14\ub799\ud654\uba74 \uac10\uc9c0 -> OK\nhttps://ffmpeg.org/ffmpeg-filters.html#blackdetect\n\n\n\n\n\n\n\uc815\uc9c0\ud654\uba74 \uac10\uc9c0 -> OK\nhttps://home-assistant.io/components/binary_sensor.ffmpeg/#motion\n\n\n\n\n\n\n\ubb34\uc74c\uac10\uc9c0 -> OK\nhttps://ffmpeg.org/ffmpeg-filters.html#toc-silencedetect\n\n\n\n\n\n\n\uad8c\uc7a5 \uc218\uce58 \ub0b4 \ubcfc\ub968\ub808\ubca8 \ud655\uc778 -> \ud655\uc778\ud544\uc694\nhttps://ffmpeg.org/ffmpeg-filters.html#volumedetect\n\n\n\n\n\n\n\uc601\uc0c1 \ubc84\ud37c\ub9c1 \uac10\uc9c0 (\ud328\ud0b7\ub4dc\ub78d \ud639\uc740 low bandwidth) -> \ud655\uc778\ud544\uc694\n\n\n\n\n\uc601\uc0c1,\uc74c\uc131 \uc2f1\ud06c\uac10\uc9c0 -> \ud655\uc778\ud544\uc694\n\n\n\uc74c\uc131 \ub178\uc774\uc988 \uac10\uc9c0 -> \ud655\uc778\ud544\uc694\n==> \n\n\n\n\n\ub124\ud2b8\uc6cc\ud06c \ud14c\uc2a4\ud2b8\ub7a9\n\n\niperf\n\n\n\n\nspeed limit\nsudo yum install wondershaper\n\n\n\n\nfrom epel\n\n\nhttp://www.linuxserve.com/2015/05/how-to-throttlelimit-network-bandwidth.html\n\n\nwondershaper eth0 1024 512 \nwondershaper clear eth0 \n\n\n1131\n sudo nano /etc/sysconfig/network-scripts/ifcfg-br0\n 1132\n sudo service network restart\n 1133\n sudo wondershaper br-6c109e2ba805 10 10\n 1134\n chkconfig NetworkManager off\n 1135\n sudo chkconfig NetworkManager off\n 1136\n sudo service NetworkManager stop\n 1137\n sudo service NetworkManager status\n 1138\n sudo wondershaper br0 10 10\n 1139\n sudo service network restart\n 1140\n sudo wondershaper eno0 100 100\n 1141\n ifconfig\n 1142\n sudo wondershaper eno1 100 100\n 1143\n sudo wondershaper eno1 clear\n 1144\n sudo wondershaper br0 100 100\n 1145  iperf -s\n 1146\n ip\n 1147\n sudo wondershaper clear\n 1148\n sudo wondershaper clear eno1\n 1149\n sudo wondershaper clear br0\n 1150\n sudo wondershaper br0 100 100\n 1151\n sudo wondershaper clear br0\n 1152\n ip\n 1153\n nmtui\n 1154\n sudo nmtui\n 1155\n chkconfig NetworkManager on\n 1156\n sudo chkconfig NetworkManager on\n 1157\n sudo service  NetworkManager start\n 1158\n sudo nmtui\n 1159\n ip\n 1160\n ifconfig\n 1161\n watch ifconfig",
             "title": "Media"
+        },
+        {
+            "location": "/media/#how-to-set-up-your-own-private-rtmp-server-using-nginx",
+            "text": "https://obsproject.com/forum/resources/how-to-set-up-your-own-private-rtmp-server-using-nginx.50/",
+            "title": "How to set up your own private RTMP server using nginx"
+        },
+        {
+            "location": "/media/#rtmp",
+            "text": "http://lpokeh.blogspot.kr/2014/07/korean-only-daumpot-afreeca-rtmp.html",
+            "title": "rtmp \uc11c\ube44\uc2a4 \ube44\uad50"
         },
         {
             "location": "/media/#media-ffmpeg",
@@ -129,6 +144,51 @@
             "location": "/system_monitoring/#netdata",
             "text": "https://github.com/firehol/netdata/wiki",
             "title": "netdata"
+        },
+        {
+            "location": "/wowza_ffmpeg_rtmp/",
+            "text": "WOWZA & FFMPEG & RTMP\n\n\n\uc2a4\ud2b8\ub9bc \uc785\ub825 id/pw = 1/1 \ub85c \uc11c\ubc84\uc5d0 \uc3dc\ub2e4.\n\n\n\uc11c\ubc84\ub294\n\n\n\n\nhttp://qxqx.iptime.org:8088/enginemanager/\n -> \nSource Authentication\n -> \nAdd Source\n \ub20c\ub7ec\uc11c id/pw \ucd94\uac00\n\n\n\n\nFFMPEG(RTMP) -> WOWZA\n\n\nffmpeg -y -re -f lavfi -i 'testsrc=size=320x240[out0];aevalsrc=sin(440\n2\nPI*t)[out1]' -vcodec libx264 -pix_fmt yuv420p -ac 2 -f flv rtmp://1:1@192.168.0.51/live/streamname\n\n\n\n\nWOWZA -> CLIENT\n\n\nhttp://qxqx.iptime.org:8088 \n\n\nMPEGDASH\nhttp://192.168.0.51:1935/live/streamname/manifest.mpd\n\n\niOS\nhttp://192.168.0.51:1935/live/streamname/playlist.m3u8\n\n\nAndroid/Other\nrtsp://192.168.0.51:1935/live/streamname\n\n\nHLS - VLC\nhttp://192.168.0.51:1935/live/streamname/playlist.m3u8\n\n\nadobe rtmp\n\n\nserver : rtmp://192.168.0.51:1935/live\nstream : streamname\n==> form ffmpeg => rtmp://192.168.0.51:1935/live/streamname\n\n\nadobe HDS\nhttp://192.168.0.51:1935/live/streamname/manifest.f4m\n\n\n\n\nWOWZA -> FFMPEG (RTMP)\n\n\nffmpeg -i rtmp://192.168.0.51:1935/live/streamname -f null -  \n\n\nWOWZA -> FFMPEG (HLS)\n\n\nffmpeg -i http://192.168.0.51:1935/live/streamname/playlist.m3u8 -f null -  \n\n\nWOWZA -> FFMPEG (udp \ubaa8\ub2c8\ud130\ub9c1 @ VLC : udp://@0.0.0.0:1234 )\n\n\nffmpeg -i http://192.168.0.51:1935/live/streamname/playlist.m3u8 -c copy -f mpegts \"udp://127.0.0.1:1234?pkt_size=1316\"",
+            "title": "Wowza ffmpeg rtmp"
+        },
+        {
+            "location": "/wowza_ffmpeg_rtmp/#wowza-ffmpeg-rtmp",
+            "text": "",
+            "title": "WOWZA &amp; FFMPEG &amp; RTMP"
+        },
+        {
+            "location": "/wowza_ffmpeg_rtmp/#idpw-11",
+            "text": "",
+            "title": "\uc2a4\ud2b8\ub9bc \uc785\ub825 id/pw = 1/1 \ub85c \uc11c\ubc84\uc5d0 \uc3dc\ub2e4."
+        },
+        {
+            "location": "/wowza_ffmpeg_rtmp/#_1",
+            "text": "http://qxqx.iptime.org:8088/enginemanager/  ->  Source Authentication  ->  Add Source  \ub20c\ub7ec\uc11c id/pw \ucd94\uac00",
+            "title": "\uc11c\ubc84\ub294"
+        },
+        {
+            "location": "/wowza_ffmpeg_rtmp/#ffmpegrtmp-wowza",
+            "text": "ffmpeg -y -re -f lavfi -i 'testsrc=size=320x240[out0];aevalsrc=sin(440 2 PI*t)[out1]' -vcodec libx264 -pix_fmt yuv420p -ac 2 -f flv rtmp://1:1@192.168.0.51/live/streamname",
+            "title": "FFMPEG(RTMP) -&gt; WOWZA"
+        },
+        {
+            "location": "/wowza_ffmpeg_rtmp/#wowza-client",
+            "text": "http://qxqx.iptime.org:8088   MPEGDASH\nhttp://192.168.0.51:1935/live/streamname/manifest.mpd  iOS\nhttp://192.168.0.51:1935/live/streamname/playlist.m3u8  Android/Other\nrtsp://192.168.0.51:1935/live/streamname  HLS - VLC\nhttp://192.168.0.51:1935/live/streamname/playlist.m3u8  adobe rtmp  server : rtmp://192.168.0.51:1935/live\nstream : streamname\n==> form ffmpeg => rtmp://192.168.0.51:1935/live/streamname  adobe HDS\nhttp://192.168.0.51:1935/live/streamname/manifest.f4m",
+            "title": "WOWZA -&gt; CLIENT"
+        },
+        {
+            "location": "/wowza_ffmpeg_rtmp/#wowza-ffmpeg-rtmp_1",
+            "text": "ffmpeg -i rtmp://192.168.0.51:1935/live/streamname -f null -",
+            "title": "WOWZA -&gt; FFMPEG (RTMP)"
+        },
+        {
+            "location": "/wowza_ffmpeg_rtmp/#wowza-ffmpeg-hls",
+            "text": "ffmpeg -i http://192.168.0.51:1935/live/streamname/playlist.m3u8 -f null -",
+            "title": "WOWZA -&gt; FFMPEG (HLS)"
+        },
+        {
+            "location": "/wowza_ffmpeg_rtmp/#wowza-ffmpeg-udp-vlc-udp00001234",
+            "text": "ffmpeg -i http://192.168.0.51:1935/live/streamname/playlist.m3u8 -c copy -f mpegts \"udp://127.0.0.1:1234?pkt_size=1316\"",
+            "title": "WOWZA -&gt; FFMPEG (udp \ubaa8\ub2c8\ud130\ub9c1 @ VLC : udp://@0.0.0.0:1234 )"
         }
     ]
 }

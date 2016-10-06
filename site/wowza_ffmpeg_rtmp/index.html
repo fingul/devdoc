@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Network simulator - My Docs</title>
+	<title>Wowza ffmpeg rtmp - My Docs</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
@@ -83,8 +83,8 @@
                 
                 
                 
-                    <li class="active">
-                        <a href="./">Network simulator</a>
+                    <li >
+                        <a href="../network_simulator/">Network simulator</a>
                     </li>
                 
                 
@@ -95,8 +95,8 @@
                 
                 
                 
-                    <li >
-                        <a href="../wowza_ffmpeg_rtmp/">Wowza ffmpeg rtmp</a>
+                    <li class="active">
+                        <a href="./">Wowza ffmpeg rtmp</a>
                     </li>
                 
                 
@@ -111,12 +111,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../network_lab/">
+                        <a rel="next" href="../system_monitoring/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li >
-                        <a rel="prev" href="../system_monitoring/">
+                    <li class="disabled">
+                        <a rel="prev" >
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -132,47 +132,66 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#network-simulator">network simulator</a></li>
+        <li class="main active"><a href="#wowza-ffmpeg-rtmp">WOWZA &amp; FFMPEG &amp; RTMP</a></li>
         
     
-        <li class="main "><a href="#create-a-work-space">Create a work space.</a></li>
+        <li class="main "><a href="#idpw-11">스트림 입력 id/pw = 1/1 로 서버에 쏜다.</a></li>
         
     
-        <li class="main "><a href="#download-miniconda">Download miniconda.</a></li>
+        <li class="main "><a href="#_1">서버는</a></li>
         
     
-        <li class="main "><a href="#install-miniconda">Install miniconda.</a></li>
+        <li class="main "><a href="#ffmpegrtmp-wowza">FFMPEG(RTMP) -&gt; WOWZA</a></li>
+        
+    
+        <li class="main "><a href="#wowza-client">WOWZA -&gt; CLIENT</a></li>
+        
+    
+        <li class="main "><a href="#wowza-ffmpeg-rtmp_1">WOWZA -&gt; FFMPEG (RTMP)</a></li>
+        
+    
+        <li class="main "><a href="#wowza-ffmpeg-hls">WOWZA -&gt; FFMPEG (HLS)</a></li>
+        
+    
+        <li class="main "><a href="#wowza-ffmpeg-udp-vlc-udp00001234">WOWZA -&gt; FFMPEG (udp 모니터링 @ VLC : udp://@0.0.0.0:1234 )</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="network-simulator">network simulator</h1>
-<p>https://github.com/facebook/augmented-traffic-control</p>
-<p>echo 'export PATH=/opt/conda/bin:$PATH' | sudo tee /etc/profile.d/conda.sh &amp;&amp; \
-    wget --quiet https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh &amp;&amp; \
-    /bin/bash ~/miniconda.sh -b -p /opt/conda &amp;&amp; \
-    rm ~/miniconda.sh</p>
-<h1 id="create-a-work-space">Create a work space.</h1>
-<h1 id="download-miniconda">Download miniconda.</h1>
-<p>echo "Started downloading miniconda"
-if [ "${OS_NAME}" = "darwin" ]; then
-    MINICONDA_INSTALL_URL="https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh"
-else
-    MINICONDA_INSTALL_URL="https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh"
-fi
-curl --location --silent "${MINICONDA_INSTALL_URL}" &gt; "/tmp/miniconda.sh"
-echo "Finished downloading miniconda"</p>
-<h1 id="install-miniconda">Install miniconda.</h1>
-<p>echo "Started installing Miniconda"</p>
-<p>rm -rf ~/conda/
-bash "/tmp/miniconda.sh" -b -p ~/conda
-echo "Finished installing Miniconda"</p>
-<p>export PATH=~/conda/bin:$PATH
-echo "export PATH=~/conda:$PATH" &gt;&gt; ~/.zshrc
-echo "export PATH=~/conda:$PATH" &gt;&gt; ~/.bashrc
-hash -r</p></div>
+<h1 id="wowza-ffmpeg-rtmp">WOWZA &amp; FFMPEG &amp; RTMP</h1>
+<h1 id="idpw-11">스트림 입력 id/pw = 1/1 로 서버에 쏜다.</h1>
+<h1 id="_1">서버는</h1>
+<ul>
+<li><code>http://qxqx.iptime.org:8088/enginemanager/</code> -&gt; <code>Source Authentication</code> -&gt; <code>Add Source</code> 눌러서 id/pw 추가</li>
+</ul>
+<h1 id="ffmpegrtmp-wowza">FFMPEG(RTMP) -&gt; WOWZA</h1>
+<p>ffmpeg -y -re -f lavfi -i 'testsrc=size=320x240[out0];aevalsrc=sin(440<em>2</em>PI*t)[out1]' -vcodec libx264 -pix_fmt yuv420p -ac 2 -f flv rtmp://1:1@192.168.0.51/live/streamname</p>
+<hr />
+<h1 id="wowza-client">WOWZA -&gt; CLIENT</h1>
+<p>http://qxqx.iptime.org:8088 </p>
+<p>MPEGDASH
+http://192.168.0.51:1935/live/streamname/manifest.mpd</p>
+<p>iOS
+http://192.168.0.51:1935/live/streamname/playlist.m3u8</p>
+<p>Android/Other
+rtsp://192.168.0.51:1935/live/streamname</p>
+<p>HLS - VLC
+http://192.168.0.51:1935/live/streamname/playlist.m3u8</p>
+<p>adobe rtmp</p>
+<p>server : rtmp://192.168.0.51:1935/live
+stream : streamname
+==&gt; form ffmpeg =&gt; rtmp://192.168.0.51:1935/live/streamname</p>
+<p>adobe HDS
+http://192.168.0.51:1935/live/streamname/manifest.f4m</p>
+<hr />
+<h1 id="wowza-ffmpeg-rtmp_1">WOWZA -&gt; FFMPEG (RTMP)</h1>
+<p>ffmpeg -i rtmp://192.168.0.51:1935/live/streamname -f null -  </p>
+<h1 id="wowza-ffmpeg-hls">WOWZA -&gt; FFMPEG (HLS)</h1>
+<p>ffmpeg -i http://192.168.0.51:1935/live/streamname/playlist.m3u8 -f null -  </p>
+<h1 id="wowza-ffmpeg-udp-vlc-udp00001234">WOWZA -&gt; FFMPEG (udp 모니터링 @ VLC : udp://@0.0.0.0:1234 )</h1>
+<p>ffmpeg -i http://192.168.0.51:1935/live/streamname/playlist.m3u8 -c copy -f mpegts "udp://127.0.0.1:1234?pkt_size=1316"</p></div>
             
         </div>
 

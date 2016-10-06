@@ -12,7 +12,9 @@
 # FFMPEG(RTMP) -> WOWZA
 
 
-ffmpeg -y -re -f lavfi -i 'testsrc=size=320x240[out0];aevalsrc=sin(440*2*PI*t)[out1]' -vcodec libx264 -pix_fmt yuv420p -ac 2 -f flv rtmp://1:1@192.168.0.51/live/streamname
+stream name : xxx
+
+ffmpeg -y -re -f lavfi -i 'testsrc=size=320x240[out0];aevalsrc=sin(440*2*PI*t)[out1]' -vcodec libx264 -pix_fmt yuv420p -ac 2 -f flv rtmp://1:1@192.168.0.51/live/xxx
 
 
 ------------------------------
@@ -36,17 +38,14 @@ Android/Other
 rtsp://192.168.0.51:1935/live/streamname
 
 
-HLS - VLC
+HLS - @VLC
 http://192.168.0.51:1935/live/streamname/playlist.m3u8
 
 
-adobe rtmp
-
+## adobe rtmp
 
 server : rtmp://192.168.0.51:1935/live
-stream : streamname
-==> form ffmpeg => rtmp://192.168.0.51:1935/live/streamname
-
+==> @ ffmpeg / vlc => rtmp://192.168.0.51:1935/live/xxx
 
 adobe HDS
 http://192.168.0.51:1935/live/streamname/manifest.f4m
@@ -56,8 +55,6 @@ http://192.168.0.51:1935/live/streamname/manifest.f4m
 
 
 # WOWZA -> FFMPEG (RTMP)
-
-
 
 
 ffmpeg -i rtmp://192.168.0.51:1935/live/streamname -f null -  
