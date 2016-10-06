@@ -152,7 +152,7 @@
         },
         {
             "location": "/system_monitoring/",
-            "text": "System monitoring\n\n\nnetdata\n\n\nhttps://github.com/firehol/netdata/wiki",
+            "text": "System monitoring\n\n\nnetdata\n\n\nhttps://github.com/firehol/netdata/wiki\n\n\n\n\nexample\n\nhttp://qxqx.iptime.org:19999/",
             "title": "System monitoring"
         },
         {
@@ -162,7 +162,7 @@
         },
         {
             "location": "/system_monitoring/#netdata",
-            "text": "https://github.com/firehol/netdata/wiki",
+            "text": "https://github.com/firehol/netdata/wiki   example http://qxqx.iptime.org:19999/",
             "title": "netdata"
         },
         {
