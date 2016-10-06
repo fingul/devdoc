@@ -66,12 +66,6 @@
                 
                 
                     <li >
-                        <a href="../fusion_network/">Fusion network</a>
-                    </li>
-                
-                
-                
-                    <li >
                         <a href="../media/">Media</a>
                     </li>
                 
@@ -95,6 +89,18 @@
                 
                 
                 
+                    <li >
+                        <a href="../tomson_fuze-1_playout/">Tomson fuze 1 playout</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../vlc_binding/">Vlc binding</a>
+                    </li>
+                
+                
+                
                     <li class="active">
                         <a href="./">Wowza ffmpeg rtmp</a>
                     </li>
@@ -111,7 +117,7 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../system_monitoring/">
+                        <a rel="next" href="../vlc_binding/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
@@ -146,6 +152,8 @@
     
         <li class="main "><a href="#wowza-client">WOWZA -&gt; CLIENT</a></li>
         
+            <li><a href="#adobe-rtmp">adobe rtmp</a></li>
+        
     
         <li class="main "><a href="#wowza-ffmpeg-rtmp_1">WOWZA -&gt; FFMPEG (RTMP)</a></li>
         
@@ -167,7 +175,8 @@
 <li><code>http://qxqx.iptime.org:8088/enginemanager/</code> -&gt; <code>Source Authentication</code> -&gt; <code>Add Source</code> 눌러서 id/pw 추가</li>
 </ul>
 <h1 id="ffmpegrtmp-wowza">FFMPEG(RTMP) -&gt; WOWZA</h1>
-<p>ffmpeg -y -re -f lavfi -i 'testsrc=size=320x240[out0];aevalsrc=sin(440<em>2</em>PI*t)[out1]' -vcodec libx264 -pix_fmt yuv420p -ac 2 -f flv rtmp://1:1@192.168.0.51/live/streamname</p>
+<p>stream name : xxx</p>
+<p>ffmpeg -y -re -f lavfi -i 'testsrc=size=320x240[out0];aevalsrc=sin(440<em>2</em>PI*t)[out1]' -vcodec libx264 -pix_fmt yuv420p -ac 2 -f flv rtmp://1:1@192.168.0.51/live/xxx</p>
 <hr />
 <h1 id="wowza-client">WOWZA -&gt; CLIENT</h1>
 <p>http://qxqx.iptime.org:8088 </p>
@@ -177,12 +186,11 @@ http://192.168.0.51:1935/live/streamname/manifest.mpd</p>
 http://192.168.0.51:1935/live/streamname/playlist.m3u8</p>
 <p>Android/Other
 rtsp://192.168.0.51:1935/live/streamname</p>
-<p>HLS - VLC
+<p>HLS - @VLC
 http://192.168.0.51:1935/live/streamname/playlist.m3u8</p>
-<p>adobe rtmp</p>
+<h2 id="adobe-rtmp">adobe rtmp</h2>
 <p>server : rtmp://192.168.0.51:1935/live
-stream : streamname
-==&gt; form ffmpeg =&gt; rtmp://192.168.0.51:1935/live/streamname</p>
+==&gt; @ ffmpeg / vlc =&gt; rtmp://192.168.0.51:1935/live/xxx</p>
 <p>adobe HDS
 http://192.168.0.51:1935/live/streamname/manifest.f4m</p>
 <hr />
