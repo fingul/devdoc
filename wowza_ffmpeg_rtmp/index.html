@@ -66,6 +66,12 @@
                 
                 
                     <li >
+                        <a href="../ffmpeg_testsrc/">Ffmpeg testsrc</a>
+                    </li>
+                
+                
+                
+                    <li >
                         <a href="../mac_setup/">Mac setup</a>
                     </li>
                 
@@ -97,12 +103,6 @@
                 
                     <li >
                         <a href="../tomson_fuze-1_playout/">Tomson fuze 1 playout</a>
-                    </li>
-                
-                
-                
-                    <li >
-                        <a href="../vlc_binding/">Vlc binding</a>
                     </li>
                 
                 
@@ -162,6 +162,9 @@
         <li class="main "><a href="#ffmpegrtmp-wowza">FFMPEG(RTMP) -&gt; WOWZA</a></li>
         
     
+        <li class="main "><a href="#vlc">VLC에서 확인</a></li>
+        
+    
         <li class="main "><a href="#wowza-client">WOWZA -&gt; CLIENT</a></li>
         
             <li><a href="#adobe-rtmp">adobe rtmp</a></li>
@@ -190,6 +193,9 @@
 <p>stream name : xxx</p>
 <p>ffmpeg -y -re -f lavfi -i 'testsrc=size=320x240[out0];aevalsrc=sin(440<em>2</em>PI*t)[out1]' -vcodec libx264 -pix_fmt yuv420p -ac 2 -f flv rtmp://1:1@192.168.0.51/live/xxx</p>
 <hr />
+<h1 id="vlc">VLC에서 확인</h1>
+<p>udp://@239.1.1.5:5000</p>
+<p>ffmpeg -i udp://239.1.1.5:5000 -c copy -f mpegts  -muxrate 4000K  -nal-hrd cbr -f mpegts  "udp://239.0.0.1:5000?pkt_size=1316"</p>
 <h1 id="wowza-client">WOWZA -&gt; CLIENT</h1>
 <p>http://qxqx.iptime.org:8088 </p>
 <p>MPEGDASH
