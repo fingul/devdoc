@@ -23,10 +23,11 @@
         [image_diff(p1,p2) for p1,p2 in pairs]    
 
 
+
 # 확인 사항
 - stack을 바꿔야합니다. dependency가 있습니다. rpm 추가 설치 필요
 - 워크로드 관련 하여 디덱트 주기 : 확인 - 대략 5초
-- Intel(R) Core(TM) i5-4250U CPU @ 1.30GHz
+- Intel(R) Core(TM) i5-4250U CPU @ 1.30GHz / 2core/4thread: max 20%
 
 # How to set up your own private RTMP server using nginx
 <https://obsproject.com/forum/resources/how-to-set-up-your-own-private-rtmp-server-using-nginx.50/>

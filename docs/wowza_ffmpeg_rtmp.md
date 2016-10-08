@@ -19,6 +19,11 @@ ffmpeg -y -re -f lavfi -i 'testsrc=size=320x240[out0];aevalsrc=sin(440*2*PI*t)[o
 
 ------------------------------
 
+# VLC에서 확인
+udp://@239.1.1.5:5000
+
+ffmpeg -i udp://239.1.1.5:5000 -c copy -f mpegts  -muxrate 4000K  -nal-hrd cbr -f mpegts  "udp://239.0.0.1:5000?pkt_size=1316"
+
 
 # WOWZA -> CLIENT
 

@@ -13,10 +13,11 @@ SOURCE = 'rtmp://192.168.0.51:1935/live/xxx'
 
 
 
-SOURCE = '/Users/m/0.mp4'
+
 
 SOURCE = "0.mp4"
 
+SOURCE = '/Users/m/0.mp4'
 import time
 import vlc
 vlc.libvlc_get_version()
@@ -29,12 +30,13 @@ player.get_state()
 
 ms = vlc.MediaStats()
 Media.get_stats(ms) and print(ms)
+Media.parse()
 
 #wait for media open 10 seconds / (also, can use event)
-for i in range(0,20):
-    if Media.is_parsed():
-        break
-    time.sleep(0.5)
+// for i in range(0,20):
+//     if Media.is_parsed():
+//         break
+//     time.sleep(0.5)
 Media.tracks_get()    
 
 #안됨!!!! -> 되야함!!!

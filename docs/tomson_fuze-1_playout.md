@@ -109,6 +109,9 @@ ffmpeg -y -re -f lavfi -i 'testsrc=size=1280x720[out0];aevalsrc=sin(440*2*PI*t)[
 
 ffmpeg -y -re  -f lavfi -i 'testsrc=size=1280x720:r=29.970[out0];aevalsrc=sin(440*2*PI*t)[out1]' -vcodec libx264  -pix_fmt yuv420p -c:a aac -ac 2 -muxrate 4000K  -nal-hrd cbr -f mpegts  "udp://239.0.0.1:5000?pkt_size=1316"
 
+#사이렌
+ffplay -f lavfi -graph aevalsrc='sin(2*PI*1000*t-40*cos(2*PI*5*t))' -
+
 
 
 ffprobe "udp://239.0.0.1:5000"
@@ -152,7 +155,9 @@ Input #0, mpegts, from 'udp://239.0.0.1:5000':
 1. ts -> 장비 입력 확인
 1. winsend -> ts -> 장비 입력 확인
 
-장비 1번 -> 직결 : 192.168.250.9 
+장비 1번 -> 직결 : 
+
+    http://192.168.250.9
     jnlp 받는다. -> admin/admin
 장비 3번 : 입력신호
 
