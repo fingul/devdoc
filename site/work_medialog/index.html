@@ -66,6 +66,12 @@
                 
                 
                     <li >
+                        <a href="../ffmpeg_testsrc/">Ffmpeg testsrc</a>
+                    </li>
+                
+                
+                
+                    <li >
                         <a href="../mac_setup/">Mac setup</a>
                     </li>
                 
@@ -101,12 +107,6 @@
                 
                 
                 
-                    <li >
-                        <a href="../vlc_binding/">Vlc binding</a>
-                    </li>
-                
-                
-                
                     <li class="active">
                         <a href="./">Work medialog</a>
                     </li>
@@ -129,7 +129,7 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../vlc_binding/">
+                        <a rel="next" href="../tomson_fuze-1_playout/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
@@ -153,11 +153,39 @@
         <li class="main active"><a href="#overview">overview</a></li>
         
     
+        <li class="main "><a href="#binbash">!/bin/bash</a></li>
+        
+    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="overview">overview</h1></div>
+<h1 id="overview">overview</h1>
+<p>rtmp -&gt; wowza(ts) -&gt; ts(re-mux)ts -&gt; video server</p>
+<p>/Applications/VLC.app/Contents/MacOS/VLC -I dummy --no-repeat --no-loop -vvv vlc://quit
+/Applications/VLC.app/Contents/MacOS/VLC -I rc</p>
+<p>alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"</p>
+<h1 id="binbash">!/bin/bash</h1>
+<p>a="0.mp4"</p>
+<p>vcodec="VIDEO_CODEC" 
+acodec="AUDIO_CODEC" 
+bitrate="VIDEO_BITRATE" 
+arate="AUDIO_BITRATE" 
+ext="OUTPUT_EXT" 
+mux="MUXER" 
+vlc="PATH_TO_VLC" 
+fmt="INPUT_EXT"</p>
+<p>vcodec="VIDEO_CODEC" 
+acodec="AUDIO_CODEC" 
+bitrate="VIDEO_BITRATE" 
+arate="AUDIO_BITRATE" 
+ext="OUTPUT_EXT" 
+mux="MUXER" 
+vlc="PATH_TO_VLC" 
+fmt="INPUT_EXT" </p>
+<p>vlc -I dummy -vvv "$a" --sout "#transcode{vcodec=$vcodec,vb=$bitrate,acodec=$acodec,ab=$arate,channels=6}:standard{mux=$mux,dst=\"$a.$ext\",access=file}" vlc://quit </p>
+<p>:sout=#transcode{vcodec=h264,vb=1024,acodec=mp4a,ab=192}:standard{mux=ts,dst=224.0.0.0,access=udp}</p>
+<p>vlc -I dummy -vvv "0.mp4" vlc://quit --sout=#transcode{vcodec=h264,vb=1024,acodec=mp4a,ab=192,channels=2,deinterlace}:standard{access=file,mux=ts,dst=t.ts} </p></div>
             
         </div>
 

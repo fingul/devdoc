@@ -66,6 +66,12 @@
                 
                 
                     <li >
+                        <a href="../ffmpeg_testsrc/">Ffmpeg testsrc</a>
+                    </li>
+                
+                
+                
+                    <li >
                         <a href="../mac_setup/">Mac setup</a>
                     </li>
                 
@@ -102,12 +108,6 @@
                 
                 
                     <li >
-                        <a href="../vlc_binding/">Vlc binding</a>
-                    </li>
-                
-                
-                
-                    <li >
                         <a href="../work_medialog/">Work medialog</a>
                     </li>
                 
@@ -134,7 +134,7 @@
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../vlc_binding/">
+                        <a rel="prev" href="../work_medialog/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -172,10 +172,13 @@
         <li class="main "><a href="#test-pattern">test pattern</a></li>
         
     
-        <li class="main "><a href="#_1">안되는것</a></li>
+        <li class="main "><a href="#_1">사이렌</a></li>
         
     
-        <li class="main "><a href="#_2">되는것</a></li>
+        <li class="main "><a href="#_2">안되는것</a></li>
+        
+    
+        <li class="main "><a href="#_3">되는것</a></li>
         
             <li><a href="#udp2390015000">udp://@239.0.0.1:5000</a></li>
         
@@ -270,9 +273,11 @@ http://lists.ffmpeg.org/pipermail/ffmpeg-user/2011-November/003285.html</p>
 </ul>
 <p>ffmpeg -y -re -f lavfi -i 'testsrc=size=1280x720[out0];aevalsrc=sin(440<em>2</em>PI*t)[out1]' -muxrate 2000k -vcodec libx264 -pix_fmt yuv420p -c:a aac -ac 2 -f mpegts "udp://239.0.0.1:5000"</p>
 <p>ffmpeg -y -re  -f lavfi -i 'testsrc=size=1280x720:r=29.970[out0];aevalsrc=sin(440<em>2</em>PI*t)[out1]' -vcodec libx264  -pix_fmt yuv420p -c:a aac -ac 2 -muxrate 4000K  -nal-hrd cbr -f mpegts  "udp://239.0.0.1:5000?pkt_size=1316"</p>
+<h1 id="_1">사이렌</h1>
+<p>ffplay -f lavfi -graph aevalsrc='sin(2<em>PI</em>1000<em>t-40</em>cos(2<em>PI</em>5*t))' -</p>
 <p>ffprobe "udp://239.0.0.1:5000"</p>
 <hr />
-<h1 id="_1">안되는것</h1>
+<h1 id="_2">안되는것</h1>
 <p>Input #0, mpegts, from 'udp://239.0.0.1:5000':
   Duration: N/A, start: 78.686344, bitrate: N/A
   Program 1 
@@ -281,7 +286,7 @@ http://lists.ffmpeg.org/pipermail/ffmpeg-user/2011-November/003285.html</p>
       service_provider: FFmpeg
     Stream #0:0[0x100]: Video: h264 (High) ([27][0][0][0] / 0x001B), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], 25 fps, 25 tbr, 90k tbn, 50 tbc
     Stream #0:1[0x101]: Audio: aac (LC) ([15][0][0][0] / 0x000F), 44100 Hz, stereo, fltp, 119 kb/s</p>
-<h1 id="_2">되는것</h1>
+<h1 id="_3">되는것</h1>
 <p>Input #0, mpegts, from 'udp://239.0.0.1:5000':
   Duration: N/A, start: 527.696033, bitrate: N/A
   Program 1 
@@ -301,9 +306,11 @@ http://lists.ffmpeg.org/pipermail/ffmpeg-user/2011-November/003285.html</p>
 <li>ts -&gt; 장비 입력 확인</li>
 <li>winsend -&gt; ts -&gt; 장비 입력 확인</li>
 </ol>
-<p>장비 1번 -&gt; 직결 : 192.168.250.9 
-    jnlp 받는다. -&gt; admin/admin
-장비 3번 : 입력신호</p>
+<p>장비 1번 -&gt; 직결 : </p>
+<pre><code>http://192.168.250.9
+jnlp 받는다. -&gt; admin/admin
+</code></pre>
+<p>장비 3번 : 입력신호</p>
 <hr />
 <ul>
 <li>winsend 작업</li>

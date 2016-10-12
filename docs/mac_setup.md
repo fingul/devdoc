@@ -5,13 +5,16 @@
 
 
 # python dict tools!
-    - A python library for accessing and searching dictionaries via /slashed/paths ala xpath
+- A python library for accessing and searching dictionaries via /slashed/paths ala xpath
 
-        https://github.com/akesterson/dpath-python
+    <https://github.com/akesterson/dpath-python>
+
+- addict - the Python Dict that's better than heroin.
     
-    - addict - the Python Dict that's better than heroin.
-        
-        addict    
+
+# controller
+    
+- CouchPotato : Automatic Movie Downloading via NZBs & Torrents <https://github.com/CouchPotato/CouchPotatoServer>            
 
 # login item
 

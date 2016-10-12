@@ -47,24 +47,6 @@ http://video.stackexchange.com/questions/16564/how-to-trim-out-black-frames-with
 ## Black and Frozen Frame Detection - Tektronix
 www.tek.com/dl/2PW-24654-0.pdf
 
-# vlc - mac
-
-alias vlc='/Applications/VLC.app/Contents/MacOS/VLC -I rc'
-
-# vlc -linux
-http://www.tecmint.com/install-vlc-media-player-in-rhel-centos-fedora/
-
-vlc "udp://@239.0.0.1:5000" --vout dummy --aout dummy -v
-
-vlc rtmp://192.168.0.51:1935/live/xxx --vout dummy --aout dummy -v
-
-=> stats info is_playing
-
- sudo yum install -y iotop tcpdump iptraf
- sudo iptraf-ng
-  sudo tcpdump
- 1399  sudo yum install -y tcpdump
- 1400  sudo tcpdump
 
 # centos7 multicast join 활성화
 
@@ -87,15 +69,34 @@ sudo sysctl -p
 ------------------
 
 
+# 서버는 
 
+- `http://qxqx.iptime.org:8088/enginemanager/` -> `Source Authentication` -> ` Add Source` 눌러서 id/pw 추가
 
-vlc -vvv "udp://@239.0.0.1:5000"
+# FFMPEG(RTMP) -> WOWZA
 
-# test pattern
+    stream name : xxx
 
+    ffmpeg -y -re -f lavfi -i 'testsrc=size=320x240[out0];aevalsrc=sin(440*2*PI*t)*0.001[out1]' -c:v libx264 -pix_fmt yuv420p -c:a aac -ac 2 -f flv rtmp://1:1@192.168.0.51/live/xxx
+    
+    
+    ffmpeg -y -re  -f lavfi -i 'testsrc=size=1280x720:r=29.970[out0];aevalsrc=sin(440*2*PI*t)*0.001[out1]' -vcodec libx264  -pix_fmt yuv420p -c:a aac -ac 2 -f flv rtmp://1:1@192.168.0.51/live/xxx
 
-<http://www.bogotobogo.com/FFMpeg/ffmpeg_video_test_patterns_src.php>
-<https://trac.ffmpeg.org/wiki/FancyFilteringExamples>
+    # 샘플 파일의 경우
+    ffmpeg -y -re -i ~/Downloads/퓨즈원출력.ts -c:v copy -c:a aac -f flv rtmp://1:1@192.168.0.51/live/xxx
+
+## WOWZA -> VLC에서 확인
+
+  vlc udp://@239.1.1.5:5000    
+
+# VLC에서 받아서 FUZE로 전달
+
+  ffmpeg -i udp://239.1.1.5:5000 -c copy -muxrate 4000k  -f mpegts  "udp://239.0.0.1:5000?pkt_size=1316" -v debug
+
+  ffmpeg -re -i udp://239.1.1.5:5000 -c copy -muxrate 4000k  -f mpegts  "udp://239.0.0.1:5000?pkt_size=1316" -v debug
+
+  vlc -vvv "udp://@239.0.0.1:5000"
+
 
 목표
 
@@ -107,7 +108,7 @@ vlc -vvv "udp://@239.0.0.1:5000"
 ffmpeg -y -re -f lavfi -i 'testsrc=size=1280x720[out0];aevalsrc=sin(440*2*PI*t)[out1]' -muxrate 2000k -vcodec libx264 -pix_fmt yuv420p -c:a aac -ac 2 -f mpegts "udp://239.0.0.1:5000"
 
 
-ffmpeg -y -re  -f lavfi -i 'testsrc=size=1280x720:r=29.970[out0];aevalsrc=sin(440*2*PI*t)[out1]' -vcodec libx264  -pix_fmt yuv420p -c:a aac -ac 2 -muxrate 4000K  -nal-hrd cbr -f mpegts  "udp://239.0.0.1:5000?pkt_size=1316"
+ffmpeg -y -re  -f lavfi -i 'testsrc=size=1280x720:r=29.970[out0];aevalsrc=sin(440*2*PI*t)*0.001[out1]' -vcodec libx264  -pix_fmt yuv420p -c:a aac -ac 2 -muxrate 4000K  -nal-hrd cbr -f mpegts  "udp://239.0.0.1:5000?pkt_size=1316"
 
 #사이렌
 ffplay -f lavfi -graph aevalsrc='sin(2*PI*1000*t-40*cos(2*PI*5*t))' -
@@ -115,19 +116,6 @@ ffplay -f lavfi -graph aevalsrc='sin(2*PI*1000*t-40*cos(2*PI*5*t))' -
 
 
 ffprobe "udp://239.0.0.1:5000"
-
-
---------------
-#안되는것
-
-Input #0, mpegts, from 'udp://239.0.0.1:5000':
-  Duration: N/A, start: 78.686344, bitrate: N/A
-  Program 1 
-    Metadata:
-      service_name    : Service01
-      service_provider: FFmpeg
-    Stream #0:0[0x100]: Video: h264 (High) ([27][0][0][0] / 0x001B), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], 25 fps, 25 tbr, 90k tbn, 50 tbc
-    Stream #0:1[0x101]: Audio: aac (LC) ([15][0][0][0] / 0x000F), 44100 Hz, stereo, fltp, 119 kb/s
 
 
 #되는것

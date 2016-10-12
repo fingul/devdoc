@@ -65,6 +65,12 @@
                 
                 
                 
+                    <li >
+                        <a href="../ffmpeg_testsrc/">Ffmpeg testsrc</a>
+                    </li>
+                
+                
+                
                     <li class="active">
                         <a href="./">Mac setup</a>
                     </li>
@@ -102,12 +108,6 @@
                 
                 
                     <li >
-                        <a href="../vlc_binding/">Vlc binding</a>
-                    </li>
-                
-                
-                
-                    <li >
                         <a href="../work_medialog/">Work medialog</a>
                     </li>
                 
@@ -129,7 +129,7 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../deploy_this_doc/">
+                        <a rel="next" href="../ffmpeg_testsrc/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
@@ -150,13 +150,34 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#login-item">login item</a></li>
+        <li class="main active"><a href="#mac-dev-setup-">mac dev setup - 이건 배껴야 함!!</a></li>
+        
+    
+        <li class="main "><a href="#python-dict-tools">python dict tools!</a></li>
+        
+    
+        <li class="main "><a href="#login-item">login item</a></li>
+        
+    
+        <li class="main "><a href="#list-keep-in-dock-installed-apps">list keep in dock installed apps</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
+<h1 id="mac-dev-setup-">mac dev setup - 이건 배껴야 함!!</h1>
+<pre><code>&lt;https://github.com/donnemartin/dev-setup&gt;
+</code></pre>
+<h1 id="python-dict-tools">python dict tools!</h1>
+<pre><code>- A python library for accessing and searching dictionaries via /slashed/paths ala xpath
+
+    https://github.com/akesterson/dpath-python
+
+- addict - the Python Dict that's better than heroin.
+
+    addict
+</code></pre>
 <h1 id="login-item">login item</h1>
 <ul>
 <li>dropbox</li>
@@ -172,7 +193,29 @@
 <li>alfred</li>
 <li>istatmenu </li>
 <li>fantastical</li>
-</ul></div>
+</ul>
+<h1 id="list-keep-in-dock-installed-apps">list keep in dock installed apps</h1>
+<pre><code>import plistlib
+
+#python3
+from urllib.parse import urlparse
+#urllib.unquote(string)
+import urllib
+
+import subprocess
+cmd = 'defaults export com.apple.dock -'
+r = subprocess.check_output(cmd, shell=True)
+d = plistlib.loads(r)
+l = [i.get('tile-data',{}).get('file-data',{}).get('_CFURLString') for i in d.get('persistent-apps')]
+l = [urlparse(i).path for i in l]
+l = [urllib.unquote(i).path for i in l]
+print(l)
+
+
+
+#아래 파일도 작업할것!!!
+#~/Library/Preferences/com.apple.loginitems.plist
+</code></pre></div>
             
         </div>
 

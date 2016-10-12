@@ -9,3 +9,10 @@ script로 만들어서 실행할 수 있도록
 
     ffmpeg `echo -y -i 0.mp4 1.mp4`
     ffmpeg $(echo -y -i 0.mp4 1.mp4)
+
+# test pattern
+
+
+<http://www.bogotobogo.com/FFMpeg/ffmpeg_video_test_patterns_src.php>
+<https://trac.ffmpeg.org/wiki/FancyFilteringExamples>
+    
