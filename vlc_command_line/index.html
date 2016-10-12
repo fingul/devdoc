@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Wowza ffmpeg rtmp - My Docs</title>
+	<title>Vlc command line - My Docs</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
@@ -113,8 +113,8 @@
                 
                 
                 
-                    <li >
-                        <a href="../vlc_command_line/">Vlc command line</a>
+                    <li class="active">
+                        <a href="./">Vlc command line</a>
                     </li>
                 
                 
@@ -137,8 +137,8 @@
                 
                 
                 
-                    <li class="active">
-                        <a href="./">Wowza ffmpeg rtmp</a>
+                    <li >
+                        <a href="../wowza_ffmpeg_rtmp/">Wowza ffmpeg rtmp</a>
                     </li>
                 
                 
@@ -153,12 +153,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../work_medialog/">
+                        <a rel="next" href="../tomson_fuze-1_playout/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li class="disabled">
-                        <a rel="prev" >
+                    <li >
+                        <a rel="prev" href="../vlc_help/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -174,74 +174,122 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#wowza-ffmpeg-rtmp">WOWZA &amp; FFMPEG &amp; RTMP</a></li>
+        <li class="main active"><a href="#cli-alias-macos">CLI Alias @ macOS</a></li>
         
     
-        <li class="main "><a href="#idpw-11">스트림 입력 id/pw = 1/1 로 서버에 쏜다.</a></li>
+        <li class="main "><a href="#_1">트랜스코딩 명렁어 와 예제들 : 중요!!</a></li>
         
     
-        <li class="main "><a href="#_1">서버는</a></li>
+        <li class="main "><a href="#_2">참고</a></li>
         
     
-        <li class="main "><a href="#ffmpegrtmp-wowza">FFMPEG(RTMP) -&gt; WOWZA</a></li>
+        <li class="main "><a href="#_3">참고 (기타)</a></li>
         
     
-        <li class="main "><a href="#vlc">VLC에서 확인</a></li>
+        <li class="main "><a href="#vlc-linux">vlc -linux</a></li>
         
     
-        <li class="main "><a href="#wowza-client">WOWZA -&gt; CLIENT</a></li>
-        
-            <li><a href="#adobe-rtmp">adobe rtmp</a></li>
+        <li class="main "><a href="#stream-to-memory-player">stream to memory @ player!!</a></li>
         
     
-        <li class="main "><a href="#wowza-ffmpeg-rtmp_1">WOWZA -&gt; FFMPEG (RTMP)</a></li>
+        <li class="main "><a href="#_4">문서 시작</a></li>
         
     
-        <li class="main "><a href="#wowza-ffmpeg-hls">WOWZA -&gt; FFMPEG (HLS)</a></li>
+        <li class="main "><a href="#libvlc">libvlc 개발 가이드</a></li>
         
     
-        <li class="main "><a href="#wowza-ffmpeg-udp-vlc-udp00001234">WOWZA -&gt; FFMPEG (udp 모니터링 @ VLC : udp://@0.0.0.0:1234 )</a></li>
+        <li class="main "><a href="#audio-filter">audio filter</a></li>
+        
+    
+        <li class="main "><a href="#vlc">vlc 설정 파일 위치</a></li>
+        
+    
+        <li class="main "><a href="#_5">로깅</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="wowza-ffmpeg-rtmp">WOWZA &amp; FFMPEG &amp; RTMP</h1>
-<h1 id="idpw-11">스트림 입력 id/pw = 1/1 로 서버에 쏜다.</h1>
-<h1 id="_1">서버는</h1>
+<h1 id="cli-alias-macos">CLI Alias @ macOS</h1>
+<pre><code>    alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
+    alias vlc_dummy='/Applications/VLC.app/Contents/MacOS/VLC -I dummy'
+    alias vlc_cli='/Applications/VLC.app/Contents/MacOS/VLC -I rc'
+</code></pre>
+<h1 id="_1">트랜스코딩 명렁어 와 예제들 : 중요!!</h1>
 <ul>
-<li><code>http://qxqx.iptime.org:8088/enginemanager/</code> -&gt; <code>Source Authentication</code> -&gt; <code>Add Source</code> 눌러서 id/pw 추가</li>
+<li>
+<p>명령어 설명
+<a href="https://wiki.videolan.org/Documentation:Streaming_HowTo/Advanced_Streaming_Using_the_Command_Line/">https://wiki.videolan.org/Documentation:Streaming_HowTo/Advanced_Streaming_Using_the_Command_Line/</a></p>
+</li>
+<li>
+<p>전체 명령어 조합
+<a href="https://wiki.videolan.org/Documentation:Streaming_HowTo/Command_Line_Examples/">https://wiki.videolan.org/Documentation:Streaming_HowTo/Command_Line_Examples/</a></p>
+</li>
 </ul>
-<h1 id="ffmpegrtmp-wowza">FFMPEG(RTMP) -&gt; WOWZA</h1>
-<p>stream name : xxx</p>
-<p>ffmpeg -y -re -f lavfi -i 'testsrc=size=320x240[out0];aevalsrc=sin(440<em>2</em>PI<em>t)</em>0.01[out1]' -vcodec libx264 -pix_fmt yuv420p -ac 2 -f flv rtmp://1:1@192.168.0.51/live/xxx</p>
-<hr />
-<h1 id="vlc">VLC에서 확인</h1>
-<p>udp://@239.1.1.5:5000</p>
-<p>ffmpeg -i udp://239.1.1.5:5000 -c copy -f mpegts  -muxrate 4000K  -nal-hrd cbr -f mpegts  "udp://239.0.0.1:5000?pkt_size=1316"</p>
-<h1 id="wowza-client">WOWZA -&gt; CLIENT</h1>
-<p>http://qxqx.iptime.org:8088 </p>
-<p>MPEGDASH
-http://192.168.0.51:1935/live/streamname/manifest.mpd</p>
-<p>iOS
-http://192.168.0.51:1935/live/streamname/playlist.m3u8</p>
-<p>Android/Other
-rtsp://192.168.0.51:1935/live/streamname</p>
-<p>HLS - @VLC
-http://192.168.0.51:1935/live/xxx/playlist.m3u8</p>
-<h2 id="adobe-rtmp">adobe rtmp</h2>
-<p>server : rtmp://192.168.0.51:1935/live
-==&gt; @ ffmpeg / vlc =&gt; rtmp://192.168.0.51:1935/live/xxx</p>
-<p>adobe HDS
-http://192.168.0.51:1935/live/streamname/manifest.f4m</p>
-<hr />
-<h1 id="wowza-ffmpeg-rtmp_1">WOWZA -&gt; FFMPEG (RTMP)</h1>
-<p>ffmpeg -i rtmp://192.168.0.51:1935/live/streamname -f null -  </p>
-<h1 id="wowza-ffmpeg-hls">WOWZA -&gt; FFMPEG (HLS)</h1>
-<p>ffmpeg -i http://192.168.0.51:1935/live/streamname/playlist.m3u8 -f null -  </p>
-<h1 id="wowza-ffmpeg-udp-vlc-udp00001234">WOWZA -&gt; FFMPEG (udp 모니터링 @ VLC : udp://@0.0.0.0:1234 )</h1>
-<p>ffmpeg -i http://192.168.0.51:1935/live/streamname/playlist.m3u8 -c copy -f mpegts "udp://127.0.0.1:1234?pkt_size=1316"</p></div>
+<h1 id="_2">참고</h1>
+<ul>
+<li>wiki : <a href="http://www.videolan.org">http://www.videolan.org</a> ➜ wiki <a href="https://wiki.videolan.org/">https://wiki.videolan.org/</a></li>
+<li>vlc announcement : https://www.jbkempf.com/blog/</li>
+</ul>
+<h1 id="_3">참고 (기타)</h1>
+<ul>
+<li>Livestreamer : Command-line utility that extracts streams from various services and pipes them into a video player of choice. 
+<a href="http://docs.livestreamer.io/#">http://docs.livestreamer.io/#</a></li>
+</ul>
+<h1 id="vlc-linux">vlc -linux</h1>
+<p>http://www.tecmint.com/install-vlc-media-player-in-rhel-centos-fedora/</p>
+<ul>
+<li>
+<p>help</p>
+<p>vlc -H</p>
+</li>
+<li>
+<p>debugging
+    -vvv</p>
+</li>
+</ul>
+<p>vlc "udp://@239.0.0.1:5000" --vout dummy --aout dummy -v</p>
+<p>vlc rtmp://192.168.0.51:1935/live/xxx --vout dummy --aout dummy -v</p>
+<p>=&gt; stats info is_playing</p>
+<p>sudo yum install -y iotop tcpdump iptraf
+ sudo iptraf-ng
+  sudo tcpdump
+ 1399  sudo yum install -y tcpdump
+ 1400  sudo tcpdump</p>
+<h1 id="stream-to-memory-player">stream to memory @ player!!</h1>
+<ul>
+<li>Stream to memory (smem) tutorial
+<a href="https://wiki.videolan.org/Stream_to_memory_(smem)_tutorial/">https://wiki.videolan.org/Stream_to_memory_(smem)_tutorial/</a></li>
+</ul>
+<h1 id="_4">문서 시작</h1>
+<p><a href="https://wiki.videolan.org/Documentation:Documentation/">https://wiki.videolan.org/Documentation:Documentation/</a></p>
+<p>(<a href="https://wiki.videolan.org">https://wiki.videolan.org</a> ➜ Documentation)</p>
+<h1 id="libvlc">libvlc 개발 가이드</h1>
+<p><a href="https://wiki.videolan.org/Hacker_Guide/">https://wiki.videolan.org/Hacker_Guide/</a></p>
+<h1 id="audio-filter">audio filter</h1>
+<p><a href="https://wiki.videolan.org/Hacker_Guide/Audio_Output/">https://wiki.videolan.org/Hacker_Guide/Audio_Output/</a></p>
+<h1 id="vlc">vlc 설정 파일 위치</h1>
+<p><a href="http://www.videolan.org/support/faq.html#Config">http://www.videolan.org/support/faq.html#Config</a></p>
+<ul>
+<li>
+<p>macOS:</p>
+<pre><code>~/Library/Preferences/org.videolan.vlc
+</code></pre>
+</li>
+<li>
+<p>Linux/Unix:</p>
+<pre><code>$(HOME)/.config/vlc/vlcrc
+</code></pre>
+</li>
+<li>
+<p>Windows:</p>
+<pre><code>2000/XP: %username%\Application Data\vlc\vlcrc
+</code></pre>
+</li>
+</ul>
+<h1 id="_5">로깅</h1>
+<p>vlc 0.ts --loop --sout="#standard{mux=ts,dst=224.0.0.1:5000,access=udp}"  -vvv --logfile -         </p></div>
             
         </div>
 
