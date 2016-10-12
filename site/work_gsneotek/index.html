@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Wowza ffmpeg rtmp - My Docs</title>
+	<title>Work gsneotek - My Docs</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
@@ -125,8 +125,8 @@
                 
                 
                 
-                    <li >
-                        <a href="../work_gsneotek/">Work gsneotek</a>
+                    <li class="active">
+                        <a href="./">Work gsneotek</a>
                     </li>
                 
                 
@@ -137,8 +137,8 @@
                 
                 
                 
-                    <li class="active">
-                        <a href="./">Wowza ffmpeg rtmp</a>
+                    <li >
+                        <a href="../wowza_ffmpeg_rtmp/">Wowza ffmpeg rtmp</a>
                     </li>
                 
                 
@@ -153,12 +153,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../work_medialog/">
+                        <a rel="next" href="../vlc_help/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li class="disabled">
-                        <a rel="prev" >
+                    <li >
+                        <a rel="prev" href="../work_medialog/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -174,74 +174,11 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#wowza-ffmpeg-rtmp">WOWZA &amp; FFMPEG &amp; RTMP</a></li>
-        
-    
-        <li class="main "><a href="#idpw-11">스트림 입력 id/pw = 1/1 로 서버에 쏜다.</a></li>
-        
-    
-        <li class="main "><a href="#_1">서버는</a></li>
-        
-    
-        <li class="main "><a href="#ffmpegrtmp-wowza">FFMPEG(RTMP) -&gt; WOWZA</a></li>
-        
-    
-        <li class="main "><a href="#vlc">VLC에서 확인</a></li>
-        
-    
-        <li class="main "><a href="#wowza-client">WOWZA -&gt; CLIENT</a></li>
-        
-            <li><a href="#adobe-rtmp">adobe rtmp</a></li>
-        
-    
-        <li class="main "><a href="#wowza-ffmpeg-rtmp_1">WOWZA -&gt; FFMPEG (RTMP)</a></li>
-        
-    
-        <li class="main "><a href="#wowza-ffmpeg-hls">WOWZA -&gt; FFMPEG (HLS)</a></li>
-        
-    
-        <li class="main "><a href="#wowza-ffmpeg-udp-vlc-udp00001234">WOWZA -&gt; FFMPEG (udp 모니터링 @ VLC : udp://@0.0.0.0:1234 )</a></li>
-        
-    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="wowza-ffmpeg-rtmp">WOWZA &amp; FFMPEG &amp; RTMP</h1>
-<h1 id="idpw-11">스트림 입력 id/pw = 1/1 로 서버에 쏜다.</h1>
-<h1 id="_1">서버는</h1>
-<ul>
-<li><code>http://qxqx.iptime.org:8088/enginemanager/</code> -&gt; <code>Source Authentication</code> -&gt; <code>Add Source</code> 눌러서 id/pw 추가</li>
-</ul>
-<h1 id="ffmpegrtmp-wowza">FFMPEG(RTMP) -&gt; WOWZA</h1>
-<p>stream name : xxx</p>
-<p>ffmpeg -y -re -f lavfi -i 'testsrc=size=320x240[out0];aevalsrc=sin(440<em>2</em>PI<em>t)</em>0.01[out1]' -vcodec libx264 -pix_fmt yuv420p -ac 2 -f flv rtmp://1:1@192.168.0.51/live/xxx</p>
-<hr />
-<h1 id="vlc">VLC에서 확인</h1>
-<p>udp://@239.1.1.5:5000</p>
-<p>ffmpeg -i udp://239.1.1.5:5000 -c copy -f mpegts  -muxrate 4000K  -nal-hrd cbr -f mpegts  "udp://239.0.0.1:5000?pkt_size=1316"</p>
-<h1 id="wowza-client">WOWZA -&gt; CLIENT</h1>
-<p>http://qxqx.iptime.org:8088 </p>
-<p>MPEGDASH
-http://192.168.0.51:1935/live/streamname/manifest.mpd</p>
-<p>iOS
-http://192.168.0.51:1935/live/streamname/playlist.m3u8</p>
-<p>Android/Other
-rtsp://192.168.0.51:1935/live/streamname</p>
-<p>HLS - @VLC
-http://192.168.0.51:1935/live/xxx/playlist.m3u8</p>
-<h2 id="adobe-rtmp">adobe rtmp</h2>
-<p>server : rtmp://192.168.0.51:1935/live
-==&gt; @ ffmpeg / vlc =&gt; rtmp://192.168.0.51:1935/live/xxx</p>
-<p>adobe HDS
-http://192.168.0.51:1935/live/streamname/manifest.f4m</p>
-<hr />
-<h1 id="wowza-ffmpeg-rtmp_1">WOWZA -&gt; FFMPEG (RTMP)</h1>
-<p>ffmpeg -i rtmp://192.168.0.51:1935/live/streamname -f null -  </p>
-<h1 id="wowza-ffmpeg-hls">WOWZA -&gt; FFMPEG (HLS)</h1>
-<p>ffmpeg -i http://192.168.0.51:1935/live/streamname/playlist.m3u8 -f null -  </p>
-<h1 id="wowza-ffmpeg-udp-vlc-udp00001234">WOWZA -&gt; FFMPEG (udp 모니터링 @ VLC : udp://@0.0.0.0:1234 )</h1>
-<p>ffmpeg -i http://192.168.0.51:1935/live/streamname/playlist.m3u8 -c copy -f mpegts "udp://127.0.0.1:1234?pkt_size=1316"</p></div>
+</div>
             
         </div>
 

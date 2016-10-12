@@ -96,6 +96,12 @@
                 
                 
                     <li >
+                        <a href="../setup_ubuntu_16.04/">Setup ubuntu 16.04</a>
+                    </li>
+                
+                
+                
+                    <li >
                         <a href="../system_monitoring/">System monitoring</a>
                     </li>
                 
@@ -103,6 +109,24 @@
                 
                     <li class="active">
                         <a href="./">Tomson fuze 1 playout</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../vlc_command_line/">Vlc command line</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../vlc_help/">Vlc help</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../work_gsneotek/">Work gsneotek</a>
                     </li>
                 
                 
@@ -134,7 +158,7 @@
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../work_medialog/">
+                        <a rel="prev" href="../vlc_command_line/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -160,22 +184,21 @@
             <li><a href="#black-and-frozen-frame-detection-tektronix">Black and Frozen Frame Detection - Tektronix</a></li>
         
     
-        <li class="main "><a href="#vlc-mac">vlc - mac</a></li>
-        
-    
-        <li class="main "><a href="#vlc-linux">vlc -linux</a></li>
-        
-    
         <li class="main "><a href="#centos7-multicast-join">centos7 multicast join 활성화</a></li>
         
     
-        <li class="main "><a href="#test-pattern">test pattern</a></li>
+        <li class="main "><a href="#_1">서버는</a></li>
         
     
-        <li class="main "><a href="#_1">사이렌</a></li>
+        <li class="main "><a href="#ffmpegrtmp-wowza">FFMPEG(RTMP) -&gt; WOWZA</a></li>
+        
+            <li><a href="#wowza-vlc">WOWZA -&gt; VLC에서 확인</a></li>
         
     
-        <li class="main "><a href="#_2">안되는것</a></li>
+        <li class="main "><a href="#vlc-fuze">VLC에서 받아서 FUZE로 전달</a></li>
+        
+    
+        <li class="main "><a href="#_2">사이렌</a></li>
         
     
         <li class="main "><a href="#_3">되는것</a></li>
@@ -237,18 +260,6 @@ http://lists.ffmpeg.org/pipermail/ffmpeg-user/2011-November/003285.html</p>
 <p>http://video.stackexchange.com/questions/16564/how-to-trim-out-black-frames-with-ffmpeg-on-windows</p>
 <h2 id="black-and-frozen-frame-detection-tektronix">Black and Frozen Frame Detection - Tektronix</h2>
 <p>www.tek.com/dl/2PW-24654-0.pdf</p>
-<h1 id="vlc-mac">vlc - mac</h1>
-<p>alias vlc='/Applications/VLC.app/Contents/MacOS/VLC -I rc'</p>
-<h1 id="vlc-linux">vlc -linux</h1>
-<p>http://www.tecmint.com/install-vlc-media-player-in-rhel-centos-fedora/</p>
-<p>vlc "udp://@239.0.0.1:5000" --vout dummy --aout dummy -v</p>
-<p>vlc rtmp://192.168.0.51:1935/live/xxx --vout dummy --aout dummy -v</p>
-<p>=&gt; stats info is_playing</p>
-<p>sudo yum install -y iotop tcpdump iptraf
- sudo iptraf-ng
-  sudo tcpdump
- 1399  sudo yum install -y tcpdump
- 1400  sudo tcpdump</p>
 <h1 id="centos7-multicast-join">centos7 multicast join 활성화</h1>
 <p>sudo nano /etc/sysctl.conf</p>
 <p>○ cat /etc/sysctl.conf                              <br />
@@ -261,10 +272,27 @@ http://lists.ffmpeg.org/pipermail/ffmpeg-user/2011-November/003285.html</p>
   net.ipv4.conf.lo.force_igmp_version = 2</p>
 <p>sudo sysctl -p</p>
 <hr />
+<h1 id="_1">서버는</h1>
+<ul>
+<li><code>http://qxqx.iptime.org:8088/enginemanager/</code> -&gt; <code>Source Authentication</code> -&gt; <code>Add Source</code> 눌러서 id/pw 추가</li>
+</ul>
+<h1 id="ffmpegrtmp-wowza">FFMPEG(RTMP) -&gt; WOWZA</h1>
+<pre><code>stream name : xxx
+
+ffmpeg -y -re -f lavfi -i 'testsrc=size=320x240[out0];aevalsrc=sin(440*2*PI*t)*0.001[out1]' -c:v libx264 -pix_fmt yuv420p -c:a aac -ac 2 -f flv rtmp://1:1@192.168.0.51/live/xxx
+
+
+ffmpeg -y -re  -f lavfi -i 'testsrc=size=1280x720:r=29.970[out0];aevalsrc=sin(440*2*PI*t)*0.001[out1]' -vcodec libx264  -pix_fmt yuv420p -c:a aac -ac 2 -f flv rtmp://1:1@192.168.0.51/live/xxx
+
+# 샘플 파일의 경우
+ffmpeg -y -re -i ~/Downloads/퓨즈원출력.ts -c:v copy -c:a aac -f flv rtmp://1:1@192.168.0.51/live/xxx
+</code></pre>
+<h2 id="wowza-vlc">WOWZA -&gt; VLC에서 확인</h2>
+<p>vlc udp://@239.1.1.5:5000    </p>
+<h1 id="vlc-fuze">VLC에서 받아서 FUZE로 전달</h1>
+<p>ffmpeg -i udp://239.1.1.5:5000 -c copy -muxrate 4000k  -f mpegts  "udp://239.0.0.1:5000?pkt_size=1316" -v debug</p>
+<p>ffmpeg -re -i udp://239.1.1.5:5000 -c copy -muxrate 4000k  -f mpegts  "udp://239.0.0.1:5000?pkt_size=1316" -v debug</p>
 <p>vlc -vvv "udp://@239.0.0.1:5000"</p>
-<h1 id="test-pattern">test pattern</h1>
-<p><a href="http://www.bogotobogo.com/FFMpeg/ffmpeg_video_test_patterns_src.php">http://www.bogotobogo.com/FFMpeg/ffmpeg_video_test_patterns_src.php</a>
-<a href="https://trac.ffmpeg.org/wiki/FancyFilteringExamples">https://trac.ffmpeg.org/wiki/FancyFilteringExamples</a></p>
 <p>목표</p>
 <hr />
 <ul>
@@ -272,20 +300,10 @@ http://lists.ffmpeg.org/pipermail/ffmpeg-user/2011-November/003285.html</p>
 <li>모니터링 부분</li>
 </ul>
 <p>ffmpeg -y -re -f lavfi -i 'testsrc=size=1280x720[out0];aevalsrc=sin(440<em>2</em>PI*t)[out1]' -muxrate 2000k -vcodec libx264 -pix_fmt yuv420p -c:a aac -ac 2 -f mpegts "udp://239.0.0.1:5000"</p>
-<p>ffmpeg -y -re  -f lavfi -i 'testsrc=size=1280x720:r=29.970[out0];aevalsrc=sin(440<em>2</em>PI*t)[out1]' -vcodec libx264  -pix_fmt yuv420p -c:a aac -ac 2 -muxrate 4000K  -nal-hrd cbr -f mpegts  "udp://239.0.0.1:5000?pkt_size=1316"</p>
-<h1 id="_1">사이렌</h1>
+<p>ffmpeg -y -re  -f lavfi -i 'testsrc=size=1280x720:r=29.970[out0];aevalsrc=sin(440<em>2</em>PI<em>t)</em>0.001[out1]' -vcodec libx264  -pix_fmt yuv420p -c:a aac -ac 2 -muxrate 4000K  -nal-hrd cbr -f mpegts  "udp://239.0.0.1:5000?pkt_size=1316"</p>
+<h1 id="_2">사이렌</h1>
 <p>ffplay -f lavfi -graph aevalsrc='sin(2<em>PI</em>1000<em>t-40</em>cos(2<em>PI</em>5*t))' -</p>
 <p>ffprobe "udp://239.0.0.1:5000"</p>
-<hr />
-<h1 id="_2">안되는것</h1>
-<p>Input #0, mpegts, from 'udp://239.0.0.1:5000':
-  Duration: N/A, start: 78.686344, bitrate: N/A
-  Program 1 
-    Metadata:
-      service_name    : Service01
-      service_provider: FFmpeg
-    Stream #0:0[0x100]: Video: h264 (High) ([27][0][0][0] / 0x001B), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], 25 fps, 25 tbr, 90k tbn, 50 tbc
-    Stream #0:1[0x101]: Audio: aac (LC) ([15][0][0][0] / 0x000F), 44100 Hz, stereo, fltp, 119 kb/s</p>
 <h1 id="_3">되는것</h1>
 <p>Input #0, mpegts, from 'udp://239.0.0.1:5000':
   Duration: N/A, start: 527.696033, bitrate: N/A

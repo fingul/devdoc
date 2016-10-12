@@ -62,3 +62,14 @@
     log out을 한후 다시 log in을 한다.
     한글/영어가 한영키로 전환되는지 확인한다.
     
+# dropbox
+
+   cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+   ~/.dropbox-dist/dropboxd
+
+# google drive
+
+<http://www.omgubuntu.co.uk/2016/08/use-google-drive-ubuntu-16-04-linux-desktops>
+
+    sudo apt install -y gnome-control-center gnome-online-accounts    
+
