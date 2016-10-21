@@ -4,6 +4,10 @@
         alias vlc_dummy='/Applications/VLC.app/Contents/MacOS/VLC -I dummy'
         alias vlc_cli='/Applications/VLC.app/Contents/MacOS/VLC -I rc'
 
+# vlc로 rtmp 트랜스코딩해서 쏘기
+
+<https://blog.vucica.net/2015/08/streaming-to-youtube-live-with-vlc-and-ffmpeg.html>
+
 # 트랜스코딩 명렁어 와 예제들 : 중요!!
 
 - 명령어 설명

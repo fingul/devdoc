@@ -68,6 +68,9 @@ sudo sysctl -p
 
 ------------------
 
+# ffmpeg streaming guide : 요것좀 더 파볼것! : constant frame rate fifo_size랑 관련있는것 같기도 하고...
+https://trac.ffmpeg.org/wiki/StreamingGuide#SavingafileandStreamingatthesametime
+
 
 # 서버는 
 

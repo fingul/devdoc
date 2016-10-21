@@ -1,26 +1,26 @@
 # 정지화면 감지
 
-        import math
-        import glob
-        from PIL import Image
-        from functools import reduce
+    import math
+    import glob
+    from PIL import Image
+    from functools import reduce
 
-        def image_diff(p1,p2):
+    def image_diff(p1,p2):
 
-            h1 = Image.open(p1).histogram()
-            h2 = Image.open(p2).histogram()
+        h1 = Image.open(p1).histogram()
+        h2 = Image.open(p2).histogram()
 
 
-            diff_squares = [(h1[i] - h2[i]) ** 2 for i in range(len(h1))]
-            rms = math.sqrt(sum(diff_squares) / len(h1))
+        diff_squares = [(h1[i] - h2[i]) ** 2 for i in range(len(h1))]
+        rms = math.sqrt(sum(diff_squares) / len(h1))
 
-            print("p1={}, p2={}, rms={}".format(p1,p2,rms))
+        print("p1={}, p2={}, rms={}".format(p1,p2,rms))
 
-        
-        l = glob.glob('/tmp/1/*.png')
+    
+    l = glob.glob('/tmp/1/*.png')
 
-        pairs = [  (l[n],l[n+1])  for n,i in enumerate(l) if n<len(l)-1]
-        [image_diff(p1,p2) for p1,p2 in pairs]    
+    pairs = [  (l[n],l[n+1])  for n,i in enumerate(l) if n<len(l)-1]
+    [image_diff(p1,p2) for p1,p2 in pairs]    
 
 
 

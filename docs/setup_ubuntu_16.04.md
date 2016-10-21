@@ -73,3 +73,14 @@
 
     sudo apt install -y gnome-control-center gnome-online-accounts    
 
+# 로그인 할 때 keyring 물어보는것 비활성화 
+
+How can I stop being prompted to unlock the 'default' keyring on boot?
+
+    <http://askubuntu.com/questions/867/how-can-i-stop-being-prompted-to-unlock-the-default-keyring-on-boot/875#875>
+    Open Applications -> Accessories -> Password and Encryption Keys
+    Right-click on the "login" keyring
+    Select "Change password"
+    Enter your old password and leave the new password blank
+    Press ok, read the security warning, think about it and if you still want to get rid of this dialog, choose "use unsafe storage".
+
