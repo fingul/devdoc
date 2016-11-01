@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Setup ubuntu 16.04 - My Docs</title>
+	<title>Memory comsume check - My Docs</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
@@ -107,8 +107,8 @@
                 
                 
                 
-                    <li >
-                        <a href="../memory_comsume_check/">Memory comsume check</a>
+                    <li class="active">
+                        <a href="./">Memory comsume check</a>
                     </li>
                 
                 
@@ -143,8 +143,8 @@
                 
                 
                 
-                    <li class="active">
-                        <a href="./">Setup ubuntu 16.04</a>
+                    <li >
+                        <a href="../setup_ubuntu_16.04/">Setup ubuntu 16.04</a>
                     </li>
                 
                 
@@ -207,12 +207,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../setup_base/">
+                        <a rel="next" href="../media/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../system_monitoring/">
+                        <a rel="prev" href="../mpeg_ts_save_epg_iptv/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -228,108 +228,35 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#ssh-copy-id">ssh-copy-id</a></li>
-        
-    
-        <li class="main "><a href="#no-passwd">no passwd</a></li>
-        
-    
-        <li class="main "><a href="#ohmyzsh">ohmyzsh</a></li>
-        
-            <li><a href="#ssh-server-enable-disable-password-authentication">SSH server enable / disable password authentication</a></li>
-        
-    
-        <li class="main "><a href="#install-ubuntu-make-pycharmwebstorm">install ubuntu make &amp; pycharm,webstorm,...</a></li>
-        
-    
-        <li class="main "><a href="#hangul">hangul</a></li>
-        
-    
-        <li class="main "><a href="#dropbox">dropbox</a></li>
-        
-    
-        <li class="main "><a href="#google-drive">google drive</a></li>
-        
-    
-        <li class="main "><a href="#keyring">로그인 할 때 keyring 물어보는것 비활성화</a></li>
-        
-    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="ssh-copy-id">ssh-copy-id</h1>
-<pre><code>brew install ssh-copy-id
+<p>ffmpeg -y -re -i Sintel.2010.1080p.mkv -vcodec copy -acodec aac -ac 2 -f flv rtmp://1:1@192.168.0.51/live/xxx
+ffmpeg -y -re -i Sintel.2010.720p.mkv -vcodec copy -acodec aac -ac 2 -f flv rtmp://1:1@192.168.0.51/live/xxx</p>
+<p>vlc  --vout dummy --aout dummy  rtmp://192.168.0.51:1935/live/xxx
+vlc  --vout dummy --aout dummy http://192.168.0.51:1935/live/xxx/playlist.m3u8</p>
+<p>yum install -y smem
+watch "smem -k"</p>
+<p>500MB / 300MB</p>
+<p>PSS 값을 측정</p>
+<ul>
+<li>1080p 기준 채널 당 : 500MB (VLC 기준 170MB)</li>
+<li>
+<p>720p 기준 채널 당 : 300MB (VLC 기준 100MB)</p>
+</li>
+<li>
+<p>배경 자료</p>
+</li>
+</ul>
+<p><a href="http://ecogeo.tistory.com/255">http://ecogeo.tistory.com/255</a></p>
+<pre><code>    USS와 PSS
 
-ssh-copy-id `HOST-NAME`
-</code></pre>
-<h1 id="no-passwd">no passwd</h1>
-<pre><code>sudo echo "$USER ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers
-</code></pre>
-<h1 id="ohmyzsh">ohmyzsh</h1>
-<pre><code>sudo apt-get install -y openssh-server git zsh
+    VSS나 RSS보다 조금 더 의미있는 수치는 USS와 PSS인데, procrank 명령어로 구할 수 있다.
 
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-</code></pre>
-<h2 id="ssh-server-enable-disable-password-authentication">SSH server enable / disable password authentication</h2>
-<pre><code>sudo su -
-wget -q --no-check-certificate https://raw.githubusercontent.com/panticz/scripts/master/disable_ssh_password_authentication.sh -O - | bash -
-exit
-
-    http://www.panticz.de/SSH-server-enable-disable-password-authentication
-
-    #!/bin/bash
-
-    sed -i 's|[#]*PasswordAuthentication yes|PasswordAuthentication no|g' /etc/ssh/sshd_config
-    sed -i 's|UsePAM yes|UsePAM no|g' /etc/ssh/sshd_config
-    service ssh restart
-</code></pre>
-<h1 id="install-ubuntu-make-pycharmwebstorm">install ubuntu make &amp; pycharm,webstorm,...</h1>
-<pre><code>sudo add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make
-sudo apt-get -y update
-sudo apt-get install -y ubuntu-make
-
-umake ide visual-studio-code
-umake ide webstorm
-umake ide pycharm-professional
-umake ide idea-ultimate
-</code></pre>
-<h1 id="hangul">hangul</h1>
-<pre><code>기본으로 설치시 English만 설치되었다고 가정하고 한글 설치와 한영 전환 설정하는 것을 어떻게 하는지 알아보자.
-
-한글 설치
-
-sudo apt-get install -y fcitx-hangul
-System Settings &gt; Language Support를 실행해서 아직 완전히 설치되지 않다고 표시되는데 잠시 기다려서 모두 설치한다.
-Keyboard input method system:을 ibus가 아닌 fcitx로 변경한다.
-재부팅한다.
-AllSettings &gt; Keyboard &gt; Shortcuts Tab &gt; Typing을 선택한다.
-Switch to Next source, Switch to Previous sourc, Compose Key, Alternative Characters Key를 모두 Disabled로 선택한다. Disabled로 선택하기 위해서는 backspace를 누르면 된다.
-Compose Key의 Disabled를 길게 눌러 Right Alt를 선택한다.
-Switch to next source는 한영키를 눌러 Multikey를 선택한다. 반드시 Compose Key 설정이 먼저되어야 Multikey를 선택할 수 있다.
-AllSetting 윈도우를 닫고 상단 메뉴바 오른쪽의 입력기 선택하는 것을 본다. 키보드 표시가 된 것이 fcitx이다. fcitx아이콘을 눌러서 Configure Current Input Method를 선택한다.
-Keyboard-English(US)가 있다면 +를 눌러 Hangul을 추가한다. (Uncheck “Only Show Current Language”). Korean이 아닌 Hangul이여야 한다.
-Global Config tab에서 Trigger Input Method는 한/영키를 눌러 Multikey로 설정(왼쪽 오른쪽 모두)하고 Extrakey for trigger input method는 Disabled로 설정한다. (Mac에서는 command key이므로 대신 shift+space를 선택한다.)
-Global Config tab에서 Program &gt; Share State Among Window &gt; All을 선택한다.
-테스트
-log out을 한후 다시 log in을 한다.
-한글/영어가 한영키로 전환되는지 확인한다.
-</code></pre>
-<h1 id="dropbox">dropbox</h1>
-<p>cd ~ &amp;&amp; wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-   ~/.dropbox-dist/dropboxd</p>
-<h1 id="google-drive">google drive</h1>
-<p><a href="http://www.omgubuntu.co.uk/2016/08/use-google-drive-ubuntu-16-04-linux-desktops">http://www.omgubuntu.co.uk/2016/08/use-google-drive-ubuntu-16-04-linux-desktops</a></p>
-<pre><code>sudo apt install -y gnome-control-center gnome-online-accounts
-</code></pre>
-<h1 id="keyring">로그인 할 때 keyring 물어보는것 비활성화</h1>
-<p>How can I stop being prompted to unlock the 'default' keyring on boot?</p>
-<pre><code>&lt;http://askubuntu.com/questions/867/how-can-i-stop-being-prompted-to-unlock-the-default-keyring-on-boot/875#875&gt;
-Open Applications -&gt; Accessories -&gt; Password and Encryption Keys
-Right-click on the "login" keyring
-Select "Change password"
-Enter your old password and leave the new password blank
-Press ok, read the security warning, think about it and if you still want to get rid of this dialog, choose "use unsafe storage".
+    USS(Unique Set Size) : 프로세스만의 고유한 페이지 수. 공유되지 않는 프로세스에 private한 메모리 크기이다.
+    PSS(Proportional Set Size) : USS + (공유 페이지 / 공유하는 프로세스 수). 즉, 프로세스 고유 메모리 사용량 + 하나의 프로세스가 차지하는 공유 메모리 비율이다. 만약 A프로세스가 6MB 메모리를 사용하고 그 중 2MB가 그 프로세스의 고유 영역이라면, 나머지 4MB는 공유 메모리이다. 4MB의 공유메모리를 4개의 프로세스가 공유하고 있다면 PSS는 2MB + (4MB/4) = 3MB가 된다.
+    PSS는 공유되는 페이지를 공유 프로세스의 수로 나누어서 좀더 정확한 메모리 사용량을 파악할 수 있게 해준다. 이게 프로세스가 사용하는 실제 메모리 크기에 가장 근접한 값이라고 볼 수 있다.
 </code></pre></div>
             
         </div>

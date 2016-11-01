@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>Install centos 7.2 - My Docs</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">My Docs</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../conda_offline/">Conda offline</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../deploy_this_doc/">Deploy this doc</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../ffmpeg_reference/">Ffmpeg reference</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../ffmpeg_testsrc/">Ffmpeg testsrc</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../hardware_encoding_intel_quicksync/">Hardware encoding intel quicksync</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">Install centos 7.2</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../mac_setup/">Mac setup</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../media/">Media</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../memory_comsume_check/">Memory comsume check</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../mpeg_ts_save_epg_iptv/">Mpeg ts save epg iptv</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../network_lab/">Network lab</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../network_simulator/">Network simulator</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../react/">React</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../setup_base/">Setup base</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../setup_ubuntu_16.04/">Setup ubuntu 16.04</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../system_monitoring/">System monitoring</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../tomson_fuze-1_playout/">Tomson fuze 1 playout</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../vlc_command_line/">Vlc command line</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../vlc_help/">Vlc help</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../work_gsneotek/">Work gsneotek</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../work_medialog/">Work medialog</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../work_multi_stream_monitor/">Work multi stream monitor</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../wowza_ffmpeg_rtmp/">Wowza ffmpeg rtmp</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../hardware_encoding_intel_quicksync/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../mac_setup/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#lenovo-ideapad-310-setup">lenovo ideapad 310 setup</a></li>
+        
+    
+        <li class="main "><a href="#_1">성능 측정 결과</a></li>
+        
+    
+        <li class="main "><a href="#_2">디스크만들기</a></li>
+        
+    
+        <li class="main "><a href="#todo-kickstart-file">TODO - kickstart-file 만들기</a></li>
+        
+    
+        <li class="main "><a href="#_3">인스톨시</a></li>
+        
+    
+        <li class="main "><a href="#_4">설치 완료 후 재부팅할때 라이센스 물을때...</a></li>
+        
+    
+        <li class="main "><a href="#_5">키 복사</a></li>
+        
+    
+        <li class="main "><a href="#disable-x-server">disable x-server</a></li>
+        
+    
+        <li class="main "><a href="#httpjastackoverflowcomquestions28837centos7-2e381abintel-media-server-studio-2017community-editione38292e382a4e383b3e382b9e38388e383bce383ab">http://ja.stackoverflow.com/questions/28837/centos7-2%E3%81%ABintel-media-server-studio-2017community-edition%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB</a></li>
+        
+    
+        <li class="main "><a href="#httpsgithubcomhirookachukasablob3097a12d7e65e649ec2da617636e13867b3e0e19procedureprocedure_centos_7_2_qsvtxt">https://github.com/hirooka/chukasa/blob/3097a12d7e65e649ec2da617636e13867b3e0e19/procedure/procedure_centos_7_2_qsv.txt</a></li>
+        
+    
+        <li class="main "><a href="#centos-72-1511-with-qsv">CentOS 7.2 (1511) with QSV</a></li>
+        
+    
+        <li class="main "><a href="#_6">*******************</a></li>
+        
+    
+        <li class="main "><a href="#intel-media-server-studio-2017-for-linux-community-edition">Intel Media Server Studio 2017 for Linux - Community Edition</a></li>
+        
+    
+        <li class="main "><a href="#_7">*******************</a></li>
+        
+    
+        <li class="main "><a href="#download-mediaserverstudioessentials2017targz-via-intel-developer-zone-httpssoftwareintelcomen-usintel-media-server-studio">Download MediaServerStudioEssentials2017.tar.gz via Intel Developer Zone (https://software.intel.com/en-us/intel-media-server-studio)</a></li>
+        
+    
+        <li class="main "><a href="#beep">beep</a></li>
+        
+    
+        <li class="main "><a href="#intel-media-server-studio-2017">Intel Media Server Studio 2017 설치 후 재부팅</a></li>
+        
+    
+        <li class="main "><a href="#_9">재부팅후 테스트</a></li>
+        
+    
+        <li class="main "><a href="#ffmpeg">FFMPEG과 친구들 설치</a></li>
+        
+    
+        <li class="main "><a href="#_10">최종 테스트</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="lenovo-ideapad-310-setup">lenovo ideapad 310 setup</h1>
+<ul>
+<li>초기에는 바이오스 들어가는 키가 <code>fn + F2</code> </li>
+<li>추후 설정에서 <code>fn</code>키 안누르고 직접 function키 사용 활성화해서 <code>F2</code>로 BIOS 진입</li>
+</ul>
+<h1 id="_1">성능 측정 결과</h1>
+<ul>
+<li>CPU : Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz</li>
+<li>MEM : 16GB</li>
+<li>
+<p>DISK : SSD</p>
+<p>ffmpeg -y    -i test.mkv     -pix_fmt yuv420p     -c:v h264_qsv -profile:v high     -b:v 10000k     -c:a aac -ac 2 -b:a 320k -ar 44100     -flags +global_header 'test-out.mp4'</p>
+</li>
+<li>
+<p>jellyfish : mkv/55Mbps/h.264 high 4.2/ac3 -&gt; 10MBps/aac</p>
+<p>1080P -&gt; 1080P 1개 동시 : 160fps 정도 나옴 : CPU 60%  : MEM 1GB
+1080P -&gt; 1080P 3개 동시 : 60fps 정도 나옴 : CPU 100% : MEM 1GB</p>
+</li>
+<li>
+<p>일반 영상: mp4/4MBps/h.264 high4.1/aac/60fps -&gt; 10MBps/aac</p>
+<p>1080P -&gt; 1080P 1개 : 250fps 정도 나옴 = 4배속 : CPU 50% : MEM 2GB
+1080P -&gt; 1080P 3개 동시: 90fps 정도 나옴  : CPU 60% = 1.5배속 : MEM 2GB</p>
+</li>
+</ul>
+<h1 id="_2">디스크만들기</h1>
+<p>diskutil list</p>
+<blockquote>
+<p><code>/dev/disk</code>가 아닌 <code>/dev/rdisk</code> 를 쓰는 이유 : 20배 빠름
+sudo dd if=/Users/m/Downloads/CentOS-7-x86_64-DVD-1511/CentOS-7-x86_64-DVD-1511.iso of=/dev/rdisk1 bs=1M</p>
+</blockquote>
+<pre><code># pv 이용해서 progress 나오게도 할수 있음
+# dd bs=1m if=~/Downloads/2013–10–09.alice.img | pv | sudo dd bs=1m of=/dev/rdisk2
+</code></pre>
+<p>say "complete"</p>
+<h1 id="todo-kickstart-file">TODO - kickstart-file 만들기</h1>
+<p><a href="https://marclop.svbtle.com/creating-an-automated-centos-7-install-via-kickstart-file">https://marclop.svbtle.com/creating-an-automated-centos-7-install-via-kickstart-file</a></p>
+<h1 id="_3">인스톨시</h1>
+<ul>
+<li>NETWORK : 부팅 시 활성화는 꼭 체크</li>
+<li>사용자 추가: administrator 에 사용자 추가 (안그러면 sudo 못함)</li>
+</ul>
+<h1 id="_4">설치 완료 후 재부팅할때 라이센스 물을때...</h1>
+<p>hit <code>1</code>, then <code>2</code> to agree to the license, then <code>C</code> , then <code>C</code> to continue. Just got to agree to the license.</p>
+<h1 id="_5">키 복사</h1>
+<p>ssh-copy-id [서버IP]</p>
+<p>ssh [서버IP]</p>
+<p>sudo echo "$USER ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers</p>
+<p>[암호입력]</p>
+<h1 id="disable-x-server">disable x-server</h1>
+<p>sudo systemctl set-default multi-user.target</p>
+<p>scp ~/MediaServerStudioEssentials2017.tar.gz 192.168.0.150:   </p>
+<p>sudo yum install -y wget pciutils zsh
+sudo yum -y install epel-release
+sudo yum install -y htop</p>
+<p>sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"</p>
+<h1 id="httpjastackoverflowcomquestions28837centos7-2e381abintel-media-server-studio-2017community-editione38292e382a4e383b3e382b9e38388e383bce383ab">http://ja.stackoverflow.com/questions/28837/centos7-2%E3%81%ABintel-media-server-studio-2017community-edition%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB</h1>
+<h1 id="httpsgithubcomhirookachukasablob3097a12d7e65e649ec2da617636e13867b3e0e19procedureprocedure_centos_7_2_qsvtxt">https://github.com/hirooka/chukasa/blob/3097a12d7e65e649ec2da617636e13867b3e0e19/procedure/procedure_centos_7_2_qsv.txt</h1>
+<h1 id="centos-72-1511-with-qsv">CentOS 7.2 (1511) with QSV</h1>
+<h1 id="_6"><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong>***</h1>
+<h1 id="intel-media-server-studio-2017-for-linux-community-edition">Intel Media Server Studio 2017 for Linux - Community Edition</h1>
+<h1 id="_7"><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong>***</h1>
+<h1 id="download-mediaserverstudioessentials2017targz-via-intel-developer-zone-httpssoftwareintelcomen-usintel-media-server-studio">Download MediaServerStudioEssentials2017.tar.gz via Intel Developer Zone (https://software.intel.com/en-us/intel-media-server-studio)</h1>
+<p>sudo usermod -a -G video $USER
+tar zxvf MediaServerStudioEssentials2017.tar.gz
+cd MediaServerStudioEssentials2017
+tar zxvf SDK2017Production16.5.tar.gz
+cd SDK2017Production16.5
+cd CentOS
+tar zxvf install_scripts_centos_16.5-55964.tar.gz
+sudo ./install_sdk_CentOS.sh</p>
+<h1 id="beep">beep</h1>
+<p>echo -e "\a"</p>
+<p>sudo reboot</p>
+<h1 id="_8"></h1>
+<p>이 링크를 배낌
+<a href="https://github.com/hirooka/chukasa/blob/3097a12d7e65e649ec2da617636e13867b3e0e19/procedure/procedure_centos_7_2_qsv.txt">https://github.com/hirooka/chukasa/blob/3097a12d7e65e649ec2da617636e13867b3e0e19/procedure/procedure_centos_7_2_qsv.txt</a></p>
+<h2 id="intel-media-server-studio-2017"><code>Intel Media Server Studio 2017</code> 설치 후 재부팅</h2>
+<pre><code># CentOS 7.2 (1511) with QSV
+
+#*******************************************************************************************************************
+# Intel Media Server Studio 2017 for Linux - Community Edition
+#*******************************************************************************************************************
+# Download MediaServerStudioEssentials2017.tar.gz via Intel Developer Zone (https://software.intel.com/en-us/intel-media-server-studio)
+sudo usermod -a -G video $USER
+tar zxvf MediaServerStudioEssentials2017.tar.gz
+cd MediaServerStudioEssentials2017
+tar zxvf SDK2017Production16.5.tar.gz
+cd SDK2017Production16.5
+cd CentOS
+tar zxvf install_scripts_centos_16.5-55964.tar.gz
+sudo ./install_sdk_CentOS.sh
+sudo reboot
+</code></pre>
+<h2 id="_9">재부팅후 테스트</h2>
+<pre><code>cd ~/MediaServerStudioEssentials2017/SDK2017Production16.5/CentOS 
+tar zxvf MediaSamples_Linux_bin-16.5-55964.tar.gz 
+cd MediaSamples_Linux_bin 
+./sample_multi_transcode -i::h264 ../content/test_stream.264 -o::h264 test_out.h264 -hw -la
+</code></pre>
+<h2 id="ffmpeg">FFMPEG과 친구들 설치</h2>
+<pre><code>#*******************************************************************************************************************
+# Lib
+#*******************************************************************************************************************
+sudo touch /etc/ld.so.conf.d/local.conf
+sudo sh -c "echo '/usr/local/lib' &gt;&gt; /etc/ld.so.conf.d/local.conf"
+
+#*******************************************************************************************************************
+# libmfx
+#*******************************************************************************************************************
+sudo mkdir /opt/intel/mediasdk/include/mfx
+sudo cp /opt/intel/mediasdk/include/*.h /opt/intel/mediasdk/include/mfx
+sudo touch /usr/lib64/pkgconfig/libmfx.pc
+sudo sh -c "echo 'prefix=/opt/intel/mediasdk' &gt;&gt; /usr/lib64/pkgconfig/libmfx.pc"
+sudo sh -c "echo 'exec_prefix=\${prefix}' &gt;&gt; /usr/lib64/pkgconfig/libmfx.pc"
+sudo sh -c "echo 'libdir=\${prefix}/lib/lin_x64' &gt;&gt; /usr/lib64/pkgconfig/libmfx.pc"
+sudo sh -c "echo 'includedir=\${prefix}/include' &gt;&gt; /usr/lib64/pkgconfig/libmfx.pc"
+sudo sh -c "echo '' &gt;&gt; /usr/lib64/pkgconfig/libmfx.pc"
+sudo sh -c "echo 'Name: libmfx' &gt;&gt; /usr/lib64/pkgconfig/libmfx.pc"
+sudo sh -c "echo 'Description: Intel Media SDK' &gt;&gt; /usr/lib64/pkgconfig/libmfx.pc"
+sudo sh -c "echo 'Version: 16.5' &gt;&gt; /usr/lib64/pkgconfig/libmfx.pc"
+sudo sh -c "echo 'Libs: -L\${libdir} -lmfx -lva -lstdc++ -ldl -lva-drm -ldrm' &gt;&gt; /usr/lib64/pkgconfig/libmfx.pc"
+sudo sh -c "echo 'Cflags: -I\${includedir} -I/usr/include/libdrm' &gt;&gt; /usr/lib64/pkgconfig/libmfx.pc"
+# use "centos/usr/lib64/pkgconfig/libmfx.pc"
+# sudo cp centos/usr/lib64/pkgconfig/libmfx.pc /usr/lib64/pkgconfig/
+
+#*******************************************************************************************************************
+# Yasm
+#*******************************************************************************************************************
+cd /tmp &amp;&amp; \
+    wget http://www.tortall.net/projects/yasm/releases/yasm-1.3.0.tar.gz &amp;&amp; \
+    tar zxvf yasm-1.3.0.tar.gz &amp;&amp; \
+    cd yasm-1.3.0 &amp;&amp; \
+    ./configure &amp;&amp; \
+    make -j8 &amp;&amp; \
+    sudo make install &amp;&amp; \
+    sudo ldconfig
+
+#*******************************************************************************************************************
+# FFmpeg
+#*******************************************************************************************************************
+cd /tmp &amp;&amp; \
+    wget https://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2 &amp;&amp; \
+    tar jxvf ffmpeg-snapshot.tar.bz2 &amp;&amp; \
+    cd ffmpeg &amp;&amp; \
+    ./configure --enable-libmfx &amp;&amp; \
+    make -j8 &amp;&amp; \
+    sudo make install &amp;&amp; \
+    sudo ldconfig
+
+#*******************************************************************************************************************
+# Fix link
+#*******************************************************************************************************************
+sudo unlink /lib/modules/3.10.0-327.el7.x86_64/source
+sudo unlink /lib/modules/3.10.0-327.el7.x86_64/build
+sudo ln -s /usr/src/kernels/3.10.0-327.28.3.el7.x86_64 /lib/modules/3.10.0-327.el7.x86_64/build
+sudo ln -s /lib/modules/3.10.0-327.el7.x86_64/build /lib/modules/3.10.0-327.el7.x86_64/source
+</code></pre>
+<h2 id="_10">최종 테스트</h2>
+<pre><code>ffmpeg \
+    -i 0.mp4 \
+    -pix_fmt yuv420p \
+    -c:v h264_qsv -profile:v baseline -preset slow \
+    -b:v 4000k \
+    -c:a aac -ac 2 -b:a 320k -ar 44100 \
+    -flags +global_header 'test-out.mp4'
+</code></pre></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

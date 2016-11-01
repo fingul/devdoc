@@ -4,7 +4,15 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2016-10-12</lastmod>
+     <lastmod>2016-11-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/conda_offline/</loc>
+     <lastmod>2016-11-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +20,15 @@
     
     <url>
      <loc>None/deploy_this_doc/</loc>
-     <lastmod>2016-10-12</lastmod>
+     <lastmod>2016-11-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/ffmpeg_reference/</loc>
+     <lastmod>2016-11-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -20,7 +36,23 @@
     
     <url>
      <loc>None/ffmpeg_testsrc/</loc>
-     <lastmod>2016-10-12</lastmod>
+     <lastmod>2016-11-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/hardware_encoding_intel_quicksync/</loc>
+     <lastmod>2016-11-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/install_centos_7.2/</loc>
+     <lastmod>2016-11-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -28,7 +60,7 @@
     
     <url>
      <loc>None/mac_setup/</loc>
-     <lastmod>2016-10-12</lastmod>
+     <lastmod>2016-11-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -36,7 +68,23 @@
     
     <url>
      <loc>None/media/</loc>
-     <lastmod>2016-10-12</lastmod>
+     <lastmod>2016-11-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/memory_comsume_check/</loc>
+     <lastmod>2016-11-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/mpeg_ts_save_epg_iptv/</loc>
+     <lastmod>2016-11-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -44,7 +92,7 @@
     
     <url>
      <loc>None/network_lab/</loc>
-     <lastmod>2016-10-12</lastmod>
+     <lastmod>2016-11-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -52,7 +100,23 @@
     
     <url>
      <loc>None/network_simulator/</loc>
-     <lastmod>2016-10-12</lastmod>
+     <lastmod>2016-11-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/react/</loc>
+     <lastmod>2016-11-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/setup_base/</loc>
+     <lastmod>2016-11-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -60,7 +124,7 @@
     
     <url>
      <loc>None/setup_ubuntu_16.04/</loc>
-     <lastmod>2016-10-12</lastmod>
+     <lastmod>2016-11-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -68,7 +132,7 @@
     
     <url>
      <loc>None/system_monitoring/</loc>
-     <lastmod>2016-10-12</lastmod>
+     <lastmod>2016-11-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -76,7 +140,7 @@
     
     <url>
      <loc>None/tomson_fuze-1_playout/</loc>
-     <lastmod>2016-10-12</lastmod>
+     <lastmod>2016-11-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -84,7 +148,7 @@
     
     <url>
      <loc>None/vlc_command_line/</loc>
-     <lastmod>2016-10-12</lastmod>
+     <lastmod>2016-11-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -92,7 +156,7 @@
     
     <url>
      <loc>None/vlc_help/</loc>
-     <lastmod>2016-10-12</lastmod>
+     <lastmod>2016-11-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -100,7 +164,7 @@
     
     <url>
      <loc>None/work_gsneotek/</loc>
-     <lastmod>2016-10-12</lastmod>
+     <lastmod>2016-11-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -108,7 +172,15 @@
     
     <url>
      <loc>None/work_medialog/</loc>
-     <lastmod>2016-10-12</lastmod>
+     <lastmod>2016-11-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/work_multi_stream_monitor/</loc>
+     <lastmod>2016-11-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -116,7 +188,7 @@
     
     <url>
      <loc>None/wowza_ffmpeg_rtmp/</loc>
-     <lastmod>2016-10-12</lastmod>
+     <lastmod>2016-11-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

@@ -60,13 +60,37 @@
                 
                 
                     <li >
+                        <a href="../conda_offline/">Conda offline</a>
+                    </li>
+                
+                
+                
+                    <li >
                         <a href="../deploy_this_doc/">Deploy this doc</a>
                     </li>
                 
                 
                 
                     <li >
+                        <a href="../ffmpeg_reference/">Ffmpeg reference</a>
+                    </li>
+                
+                
+                
+                    <li >
                         <a href="../ffmpeg_testsrc/">Ffmpeg testsrc</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../hardware_encoding_intel_quicksync/">Hardware encoding intel quicksync</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../install_centos_7.2/">Install centos 7.2</a>
                     </li>
                 
                 
@@ -84,6 +108,18 @@
                 
                 
                     <li >
+                        <a href="../memory_comsume_check/">Memory comsume check</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../mpeg_ts_save_epg_iptv/">Mpeg ts save epg iptv</a>
+                    </li>
+                
+                
+                
+                    <li >
                         <a href="../network_lab/">Network lab</a>
                     </li>
                 
@@ -91,6 +127,18 @@
                 
                     <li >
                         <a href="../network_simulator/">Network simulator</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../react/">React</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../setup_base/">Setup base</a>
                     </li>
                 
                 
@@ -138,6 +186,12 @@
                 
                 
                     <li >
+                        <a href="../work_multi_stream_monitor/">Work multi stream monitor</a>
+                    </li>
+                
+                
+                
+                    <li >
                         <a href="../wowza_ffmpeg_rtmp/">Wowza ffmpeg rtmp</a>
                     </li>
                 
@@ -174,11 +228,69 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
+        <li class="main active"><a href="#gpmidicentos-64">gpmidi/centos-6.4</a></li>
+        
+    
+        <li class="main "><a href="#_1">버전 확인</a></li>
+        
+    
+        <li class="main "><a href="#run-vlc-as-root-not-recommend">run vlc as root (not recommend)</a></li>
+        
+    
+        <li class="main "><a href="#vlc-install">VLC INSTALL</a></li>
+        
+    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-</div>
+<h1 id="gpmidicentos-64">gpmidi/centos-6.4</h1>
+<hr />
+<p>비고 : 6.4 제외</p>
+<p>gpmidi/centos-6.3
+gpmidi/centos-6.5
+centos:6.6
+centos:6.7
+centos:6.8
+centos:7.0.1406
+centos:7.1.1503
+centos:7.2.1511</p>
+<p>-DASH : http://192.168.0.51:1935/vod/mp4:sample.mp4/manifest.mpd
+=&gt; VLC는 원래 안됨
+-HLS : http://192.168.0.51:1935/vod/mp4:sample.mp4/playlist.m3u8
+-RTMP : rtmp://192.168.0.51:1935/vod/mp4:sample.mp4</p>
+<hr />
+<h1 id="_1">버전 확인</h1>
+<p>echo $(rpm -q --whatprovides redhat-release)</p>
+<blockquote>
+<p>centos-release-6-3.el6.centos.9.x86_64</p>
+</blockquote>
+<p>rpm -q --qf "%{VERSION}" $(rpm -q --whatprovides redhat-release)</p>
+<h1 id="run-vlc-as-root-not-recommend">run vlc as root (not recommend)</h1>
+<p>sed -i 's/geteuid/getppid/' /usr/bin/vlc</p>
+<h1 id="vlc-install">VLC INSTALL</h1>
+<pre><code>docker run -it centos:7 bash
+docker run -it centos:6 bash
+
+yum -y install yum-utils epel-release
+
+# for fix centos @6.3
+# Error: Cannot retrieve metalink for repository: epel. Please verify its path and try again
+
+rpm -Uvh http://li.nux.ro/download/nux/dextop/el6/x86_64/nux-dextop-release-0-2.el6.nux.noarch.rpm
+
+rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+
+yum --disablerepo=epel -y update  ca-certificates
+
+yumdownloader --resolve vlc
+yum -y --nogpgcheck localinstall *.rpm
+
+# for fix
+# @centos6 - D-Bus library appears to be incorrectly set up; failed to read
+#
+service messagebus start
+</code></pre></div>
             
         </div>
 
