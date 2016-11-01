@@ -1,6 +1,6 @@
 
 # Created by https://www.gitignore.io/api/vagrant,osx,linux,python,pycharm
-
+.pdf
 ### Vagrant ###
 .vagrant/
 
